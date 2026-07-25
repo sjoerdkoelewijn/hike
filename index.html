@@ -90,7 +90,7 @@
   /* ---------- STAT TILES ---------- */
   .route-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0 1.2rem}
   @media(min-width:600px){ .route-stats{grid-template-columns:repeat(4,1fr)} }
-  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.85rem .8rem;text-align:center}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.85rem .8rem;text-align:center}
   .stat .val{display:block;font-size:1.3rem;font-weight:800;color:var(--ink);line-height:1.2}
   .stat .lab{display:block;font-size:.75rem;color:var(--muted);margin-top:.15rem}
 
@@ -99,14 +99,14 @@
   .route-link:hover{background:var(--green-dark);color:#fff}
 
   /* ---------- ETAPPES (strakke lijst) ---------- */
-  .etappes{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:1.2rem}
+  .etappes{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:1.2rem}
   .etappe{padding:.8rem 1rem;border-top:1px solid var(--border)}
   .etappe:first-child{border-top:none}
   .etappe .day{font-weight:700;color:var(--ink);display:block}
   .etappe .meta{font-size:.88rem;color:var(--muted)}
 
   /* ---------- HUTTEN ---------- */
-  .hut{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.9rem 1.1rem;margin-bottom:.7rem}
+  .hut{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.9rem 1.1rem;margin-bottom:.7rem}
   .hut:last-child{margin-bottom:0}
   .hut .nacht{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--green-dark);font-weight:800}
   .hut .naam{font-weight:700;color:var(--ink);font-size:1.05rem;margin:.1rem 0 .3rem}
