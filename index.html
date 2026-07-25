@@ -3,17 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#2F4D3A">
+<meta name="theme-color" content="#1E3932">
 <title>Pyreneeën Hutten Tocht — Paklijst & Info</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⛰️%3C/text%3E%3C/svg%3E">
 <style>
   :root{
-    --green:#2F4D3A;
-    --amber:#C98A3B;
-    --cream:#FBF7F0;
-    --tip-bg:#F3EEE1;
+    /* Starbucks-geïnspireerd: diep 'house green', warme crème, gouden accent */
+    --green:#1E3932;      /* deep house green — koppen, balken, knoppen */
+    --green-mid:#00704A;  /* Starbucks green — accenten, hover */
+    --amber:#B98529;      /* warm goud accent */
+    --cream:#F7F4EC;
+    --tip-bg:#E7F1EC;
     --ink:#2B2B28;
-    --border:#E4DBCB;
+    --border:#E9E3D6;
+    --shadow:0 2px 14px rgba(30,57,50,.07);
+    --radius:16px;
+    /* etappe-kleuren, afgeleid van de kaart */
+    --dag1:#6FB84A;
+    --dag2:#3FBFC7;
+    --dag3:#5B6FE0;
+    --dag4:#9B6FD4;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -113,13 +122,15 @@
   .block ul{margin:.2rem 0 1rem 1.2rem}
   .block li{margin-bottom:.3rem}
   strong{color:var(--green)}
+  a{color:var(--green-mid);text-underline-offset:2px}
+  a:hover{color:var(--green)}
 
   /* ---------- TIP CALLOUT ---------- */
   .tip{
     background:var(--tip-bg);
-    border-left:4px solid var(--amber);
-    border-radius:0 8px 8px 0;
-    padding:.9rem 1.1rem;
+    border-left:4px solid var(--green-mid);
+    border-radius:0 var(--radius) var(--radius) 0;
+    padding:.95rem 1.15rem;
     margin:1rem 0;
   }
   .tip .tip-label{
@@ -128,10 +139,80 @@
     letter-spacing:.05em;
     font-size:.78rem;
     font-weight:800;
-    color:var(--amber);
+    color:var(--green-mid);
     margin-bottom:.25rem;
   }
   .tip p{margin:0;color:var(--ink)}
+
+  /* ---------- ROUTE ---------- */
+  .route-stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:.7rem;
+    margin:.4rem 0 1.2rem;
+  }
+  @media(min-width:600px){ .route-stats{grid-template-columns:repeat(4,1fr)} }
+  .stat{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:.8rem .8rem;
+    text-align:center;
+  }
+  .stat .val{display:block;font-size:1.3rem;font-weight:800;color:var(--green);line-height:1.2}
+  .stat .lab{display:block;font-size:.75rem;color:#8a8577;margin-top:.15rem}
+
+  .route-link{
+    display:inline-block;
+    background:var(--green);
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    padding:.75rem 1.5rem;
+    border-radius:999px;
+    margin-bottom:1.3rem;
+    transition:background .15s;
+  }
+  .route-link:hover{background:var(--green-mid);color:#fff}
+
+  iframe.alltrails{
+    display:block;
+    width:100%;
+    height:400px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    margin-bottom:1.3rem;
+  }
+
+  .etappe{
+    background:#fff;
+    border:1px solid var(--border);
+    border-left:5px solid var(--dag1);
+    box-shadow:var(--shadow);
+    border-radius:0 var(--radius) var(--radius) 0;
+    padding:.8rem 1rem;
+    margin-bottom:.7rem;
+  }
+  .etappe.d2{border-left-color:var(--dag2)}
+  .etappe.d3{border-left-color:var(--dag3)}
+  .etappe.d4{border-left-color:var(--dag4)}
+  .etappe .day{font-weight:700;color:var(--green);display:block;margin-bottom:.15rem}
+  .etappe .meta{font-size:.88rem;color:#7a7568}
+
+  /* ---------- HUTTEN ---------- */
+  .hut{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:.9rem 1.1rem;
+    margin-bottom:.7rem;
+  }
+  .hut .nacht{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--amber);font-weight:800}
+  .hut .naam{font-weight:700;color:var(--green);font-size:1.05rem;margin:.1rem 0 .3rem}
+  .hut a.hut-link{font-size:.9rem;font-weight:600}
 
   /* ---------- PACKING LIST ---------- */
   .packing-head{
@@ -161,7 +242,8 @@
   }
   .group{
     border:1px solid var(--border);
-    border-radius:10px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
     overflow:hidden;
     background:#fff;
     align-self:start;
@@ -212,11 +294,31 @@
     color:#8a8577;
     font-size:.88rem;
     font-weight:600;
-    padding:.5rem 1rem;
-    border-radius:8px;
+    padding:.55rem 1.3rem;
+    border-radius:999px;
     cursor:pointer;
   }
-  .reset-btn:hover{border-color:var(--amber);color:var(--amber)}
+  .reset-btn:hover{border-color:var(--green-mid);color:var(--green-mid)}
+
+  /* ---------- FLOATING CTA (Frap-stijl) ---------- */
+  .fab{
+    position:fixed;
+    right:18px;bottom:18px;
+    width:58px;height:58px;
+    border-radius:50%;
+    background:var(--green-mid);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.5rem;
+    text-decoration:none;
+    box-shadow:0 6px 20px rgba(30,57,50,.28);
+    z-index:50;
+    transition:transform .15s, background .15s;
+  }
+  .fab:hover{background:var(--green);color:#fff;transform:translateY(-2px)}
+  .fab:active{transform:translateY(0)}
 
   /* ---------- FOOTER ---------- */
   footer{
@@ -236,8 +338,8 @@
   <p class="subtitle">Wat je meeneemt en wat je kan verwachten</p>
   <div class="chips">
     <span class="chip">4 dagen</span>
-    <span class="chip">Halverwege september</span>
-    <span class="chip">Hut-naar-hut, geen tent nodig</span>
+    <span class="chip">13–16 september</span>
+    <span class="chip">Hut-naar-hut</span>
   </div>
 </header>
 
@@ -248,19 +350,71 @@
     We lopen 4 dagen door de Pyreneeën en slapen elke nacht in een berghut, dus geen tent, geen slaapmat en geen kookspullen nodig. Deze gids helpt je met inpakken en met wat je onderweg kan verwachten.
   </p>
 
-  <!-- ===================== SECTIES ===================== -->
+  <!-- ===================== 1. DE ROUTE ===================== -->
   <section class="block">
-    <h2><span class="num">1.</span> Het weer</h2>
-    <p>We gaan halverwege september. Overdag is het meestal lekker weer, maar op hoogte kan het flink afkoelen, zeker 's ochtends vroeg en 's avonds. De zon is hier in de bergen veel sterker dan thuis. Houd ook rekening met regen: in de bergen kan een bui echt flink tekeergaan.</p>
+    <h2><span class="num">1.</span> De route</h2>
+    <p>Een rondtocht van 4 dagen door het Néouvielle-massief. We beginnen en eindigen bij dezelfde parking en slapen onderweg in drie verschillende hutten.</p>
+    <div class="route-stats">
+      <div class="stat"><span class="val">32,07 km</span><span class="lab">Afstand</span></div>
+      <div class="stat"><span class="val">2.235 m</span><span class="lab">Stijging</span></div>
+      <div class="stat"><span class="val">13,5–14,5 u</span><span class="lab">Looptijd</span></div>
+      <div class="stat"><span class="val">4</span><span class="lab">Etappes</span></div>
+    </div>
+    <iframe class="alltrails" src="https://www.alltrails.com/widget/map/custom-route-340e4b0?u=m&sh=6blwfr" width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" loading="lazy" title="AllTrails: routekaart Pyreneeën Hutten Tocht"></iframe>
+    <a class="route-link" href="https://www.alltrails.com/explore/custom-routes/custom-route-340e4b0" target="_blank" rel="noopener">Open de route op AllTrails →</a>
+
+    <div class="etappe d1">
+      <span class="day">Dag 1 — naar Refuge de l'Oule</span>
+      <span class="meta">6,7 km · ↗ 648 m · ↘ 446 m · 3–3,5 uur</span>
+    </div>
+    <div class="etappe d2">
+      <span class="day">Dag 2 — naar Refuge Campana de Cloutou</span>
+      <span class="meta">9,3 km · ↗ 744 m · ↘ 350 m · 3,5–4 uur</span>
+    </div>
+    <div class="etappe d3">
+      <span class="day">Dag 3 — naar Refuge d'Aygues-Cluses</span>
+      <span class="meta">7,1 km · ↗ 447 m · ↘ 519 m · 3–3,5 uur</span>
+    </div>
+    <div class="etappe d4">
+      <span class="day">Dag 4 — terug naar de parking</span>
+      <span class="meta">8,9 km · ↗ 396 m · ↘ 677 m · 3,5–4 uur</span>
+    </div>
+  </section>
+
+  <!-- ===================== 2. DE HUTTEN ===================== -->
+  <section class="block">
+    <h2><span class="num">2.</span> De hutten</h2>
+    <div class="hut">
+      <span class="nacht">Nacht 1</span>
+      <div class="naam">Refuge de l'Oule</div>
+      <a class="hut-link" href="https://www.visit-neouvielle.com/fiche-hebergement-refuge-de-l-oule-neouvielle-bigorre-hx25a1megvdf.html" target="_blank" rel="noopener">Meer info →</a>
+    </div>
+    <div class="hut">
+      <span class="nacht">Nacht 2</span>
+      <div class="naam">Refuge Campana de Cloutou</div>
+      <a class="hut-link" href="https://refugecampanadecloutou.ffcam.fr/home.html" target="_blank" rel="noopener">Meer info →</a>
+    </div>
+    <div class="hut">
+      <span class="nacht">Nacht 3</span>
+      <div class="naam">Refuge d'Aygues-Cluses</div>
+      <a class="hut-link" href="https://www.visit-neouvielle.com/fiche-hebergement-refuge-d-aygues-cluses-neouvielle-bigorre-8hdlfjrygjf.html" target="_blank" rel="noopener">Meer info →</a>
+    </div>
+  </section>
+
+  <!-- ===================== 3. HET WEER ===================== -->
+  <section class="block">
+    <h2><span class="num">3.</span> Het weer</h2>
+    <p>We gaan van 13 tot 16 september. Overdag is het meestal lekker weer, maar op hoogte kan het flink afkoelen, zeker 's ochtends vroeg en 's avonds. De zon is hier in het zuiden erg sterk, zeker in de bergen. Houd ook rekening met regen: in de bergen kan een bui echt flink tekeergaan.</p>
     <div class="tip">
       <span class="tip-label">Tip — Bescherm jezelf tegen de zon</span>
       <p>Draag zoveel mogelijk een shirt met lange mouwen, een buff om je nek en een hoed of pet met brede rand. Dan heb je veel minder zonnebrand nodig.</p>
     </div>
   </section>
 
+  <!-- ===================== 4. DAGRITME ===================== -->
   <section class="block">
-    <h2><span class="num">2.</span> Dagritme</h2>
-    <p>We moeten uiterlijk om <strong>18:00</strong> bij de hut zijn. Het is slim om te mikken op <strong>16:00</strong>: onweer in de bergen begint meestal pas na die tijd, dus hoe eerder we binnen zijn, hoe kleiner de kans dat we in een bui lopen.</p>
+    <h2><span class="num">4.</span> Dagritme</h2>
+    <p>We moeten uiterlijk om <strong>18:00</strong> bij de hut zijn, anders slaan ze alarm en gaan ze je zoeken. Het is slim om te mikken op <strong>16:00</strong>: onweer in de bergen begint meestal pas na die tijd, dus hoe eerder we binnen zijn, hoe kleiner de kans dat we in een bui lopen.</p>
     <ul>
       <li>16:00 — Streefaankomst bij de hut (voor het weer)</li>
       <li>18:00 — Uiterste aankomsttijd</li>
@@ -268,51 +422,75 @@
     </ul>
   </section>
 
+  <!-- ===================== 5. ETEN ===================== -->
   <section class="block">
-    <h2><span class="num">3.</span> Eten</h2>
+    <h2><span class="num">5.</span> Eten</h2>
     <p>Het avondeten in de hut hebben we al gereserveerd. Deze hutten liggen zo afgelegen dat ze alleen per helikopter bevoorraad worden, dus alles wordt gemaakt van producten die lang houdbaar zijn. Meestal begint het met linzensoep, dan een hoofdgerecht zoals stoofvlees met pasta of rijst, en als toetje eerst een beetje kaas en daarna iets zoets — heel Frans. Iedereen eet hetzelfde, tenzij je een dieetwens hebt doorgegeven.</p>
-    <p>Ontbijt en lunch nemen we liever zelf mee in plaats van via de hut, dat stelt vaak niet zoveel voor. We nemen een shakebeker mee met eiwitpoeder en gedroogde havermoutpap: gewoon water toevoegen en je hebt een vullend ontbijt of lunch. Daarnaast nemen we droge worst, een heel brood en Snickers mee. Dat is in onze ervaring genoeg.</p>
+    <p>Ontbijt en lunch nemen we liever zelf mee in plaats van via de hut, dat stelt vaak niet zoveel voor. We nemen een shakebeker mee met eiwitpoeder en gedroogde havermoutpap: gewoon water toevoegen en je hebt een vullend ontbijt of lunch. Daarnaast nemen we droge worst, een heel brood, Snickers, een zakje zoute nootjes en mueslibars mee. Dat is in onze ervaring genoeg.</p>
+    <p>Je kan ook lunch (en ontbijt) bij de hut bijboeken. Bij 2 van de 3 hutten zit het ontbijt er al bij.</p>
+    <p>Eten en drinken voor onderweg kunnen we hier ter plaatse kopen: we stoppen even bij de supermarkt op de weg vanaf het vliegveld.</p>
     <div class="tip">
       <span class="tip-label">Tip — Water onderweg</span>
       <p>We hebben een waterfilter bij ons, dus je hoeft niet al je water de hele dag mee te dragen. We vullen onderweg bij uit rivieren en meertjes.</p>
     </div>
   </section>
 
+  <!-- ===================== 6. SLAPEN ===================== -->
   <section class="block">
-    <h2><span class="num">4.</span> Slapen</h2>
+    <h2><span class="num">6.</span> Slapen</h2>
     <p>We slapen in een slaapzaal op stapelbedden, samen met andere wandelaars. De hutten waar wij naartoe gaan zijn vrij nieuw en comfortabel. De eerste nacht slapen we samen op een kamer, en dat lukt bij de tweede hut waarschijnlijk ook.</p>
-    <p>Er liggen dekens en kussens, maar die worden maar één keer per seizoen gewassen. Daarom is een <strong>slaapzak liner</strong> en een <strong>kussensloop</strong> verplicht mee te nemen.</p>
+    <p>Er liggen dekens en kussens, maar die worden maar één keer per seizoen gewassen. Daarom is een <strong>lakenzak</strong> en een <strong>kussensloop</strong> verplicht mee te nemen.</p>
     <div class="tip">
       <span class="tip-label">Tip — Oordopjes</span>
-      <p>Je slaapt met meerdere mensen op één zaal, dus goede oordopjes zijn geen overbodige luxe. Neusdopjes tegen snurken mogen ook.</p>
+      <p>Je slaapt met meerdere mensen op één zaal, dus goede oordopjes zijn geen overbodige luxe.</p>
     </div>
   </section>
 
+  <!-- ===================== 7. DOUCHEN & TOILET ===================== -->
   <section class="block">
-    <h2><span class="num">5.</span> Douchen &amp; toilet</h2>
-    <p>Douchen gaat vaak met een muntje: je krijgt een paar minuten warm water dat je op pauze kunt zetten, een soort marinierdouche. In sommige hutten is koud douchen gratis.</p>
+    <h2><span class="num">7.</span> Douchen &amp; toilet</h2>
+    <p>Douchen gaat vaak met een muntje: je krijgt een paar minuten warm water dat je op pauze kunt zetten. In sommige hutten is koud douchen gratis.</p>
     <p>Het toilet verschilt per hut. Soms is het een gewoon watertoilet, soms een gat in de grond. Bij de nieuwere hutten waar wij naartoe gaan is het meestal gewoon een watertoilet.</p>
   </section>
 
+  <!-- ===================== 8. AFVAL ===================== -->
   <section class="block">
-    <h2><span class="num">6.</span> Afval</h2>
+    <h2><span class="num">8.</span> Afval</h2>
     <p>Alles wat je mee de berg op neemt, neem je ook weer mee naar beneden. Neem daarom 1 of 2 kleine vuilniszakjes mee voor je eigen afval.</p>
   </section>
 
+  <!-- ===================== 9. TELEFOON & OPLADEN ===================== -->
   <section class="block">
-    <h2><span class="num">7.</span> Telefoon &amp; opladen</h2>
+    <h2><span class="num">9.</span> Telefoon &amp; opladen</h2>
     <p>In de bergen is er meestal geen bereik. Zet je telefoon op vliegtuigstand, dan gaat de batterij een stuk langer mee. Opladen kan in de hut, maar neem voor de zekerheid ook een powerbank mee.</p>
   </section>
 
+  <!-- ===================== 10. KLEDING: MERINO ===================== -->
   <section class="block">
-    <h2><span class="num">8.</span> Kleding: merino wol</h2>
+    <h2><span class="num">10.</span> Kleding: merino wol</h2>
     <p>Kies zoveel mogelijk shirts en sokken van merino wol. Vanaf ongeveer 80% merino gaat het niet stinken, ook niet na dagen zweten. Een shirt van 100% merino kun je makkelijk drie dagen achter elkaar dragen zonder dat het ruikt. Voor sokken geldt hetzelfde: merino maakt echt een groot verschil.</p>
+    <div class="tip">
+      <span class="tip-label">Tip — Twee outfits</span>
+      <p>Het doel is om met één wandeloutfit en één droge outfit voor in de hut te reizen. Die droge outfit is meteen je pyjama.</p>
+    </div>
   </section>
 
-  <!-- ===================== PAKLIJST ===================== -->
+  <!-- ===================== 11. VEILIGHEID & GEZONDHEID ===================== -->
+  <section class="block">
+    <h2><span class="num">11.</span> Veiligheid &amp; gezondheid</h2>
+    <p>Wij nemen een EHBO-kit mee voor de groep. Neem daarnaast zelf <strong>pijnstillers</strong> en <strong>blaarpleisters</strong> mee — blaren zijn de meest voorkomende kwaal onderweg.</p>
+    <p>Zweet je veel? Dan kun je <strong>zoutpillen</strong> meenemen om je zouten aan te vullen.</p>
+    <p>Hoe hoger je komt, hoe minder beestjes er zijn. Toch is het een goed idee om wat <strong>deet</strong> (of iets vergelijkbaars) mee te nemen tegen muggen, teken en paardenvliegen.</p>
+    <div class="tip">
+      <span class="tip-label">Tip — Reisverzekering met bergdekking</span>
+      <p>Zorg dat je een reisverzekering hebt met bergdekking, zodat een reddingsactie (search &amp; rescue) in de bergen gedekt is.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 12. PAKLIJST ===================== -->
   <section class="block" id="paklijst">
     <div class="packing-head">
-      <h2 style="border:none;margin:0;padding:0"><span class="num">9.</span> Paklijst</h2>
+      <h2 style="border:none;margin:0;padding:0"><span class="num">12.</span> Paklijst</h2>
       <span class="counter" id="counter">0 / 0 gepakt</span>
     </div>
 
@@ -327,7 +505,7 @@
           <li><label class="item"><input type="checkbox" data-pack id="kleding-sokken"><span class="txt">4 paar sokken (bij voorkeur merino)</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="kleding-onderbroeken"><span class="txt">4 onderbroeken</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="kleding-fleece"><span class="txt">Fleece of trui</span></label></li>
-          <li><label class="item"><input type="checkbox" data-pack id="kleding-puffy"><span class="txt">Puffy jack</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-puffy"><span class="txt">Droge trui voor in de hut</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="kleding-regenjas"><span class="txt">Regenjas (ademend)</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="kleding-hoed"><span class="txt">Wandelhoed of zonnepet</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="kleding-muts"><span class="txt">Muts</span></label></li>
@@ -337,37 +515,41 @@
       </div>
 
       <div class="group">
-        <div class="group-head">Op je voeten</div>
+        <div class="group-head">Aan je voeten</div>
         <ul>
           <li><label class="item"><input type="checkbox" data-pack id="voeten-schoenen"><span class="txt">Wandelschoenen</span></label></li>
-          <li><label class="item"><input type="checkbox" data-pack id="voeten-slippers"><span class="txt">Slippers voor in de hut</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="voeten-slippers"><span class="txt">Slippers voor in de hut<span class="note">je kan ook slippers lenen bij de hutten — grote maten zijn vaak wat lastiger</span></span></label></li>
         </ul>
       </div>
 
       <div class="group">
         <div class="group-head">Slapen</div>
         <ul>
-          <li><label class="item"><input type="checkbox" data-pack id="slapen-liner"><span class="txt">Slaapzak liner</span></label></li>
-          <li><label class="item"><input type="checkbox" data-pack id="slapen-kussensloop"><span class="txt">Kussensloop</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="slapen-liner"><span class="txt">Lakenzak</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="slapen-kussensloop"><span class="txt">Kussensloop of eigen kussentje</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="slapen-oordopjes"><span class="txt">Oordopjes</span></label></li>
         </ul>
       </div>
 
       <div class="group">
-        <div class="group-head">Verzorging</div>
+        <div class="group-head">Verzorging &amp; EHBO</div>
         <ul>
           <li><label class="item"><input type="checkbox" data-pack id="verzorging-handdoek"><span class="txt">Sneldrogende handdoek</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="verzorging-toilettas"><span class="txt">Minimale toilettas</span></label></li>
-          <li><label class="item"><input type="checkbox" data-pack id="verzorging-wcpapier"><span class="txt">Wc-papier</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-wcpapier"><span class="txt">(Nat) wc-papier of zakdoekjes</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="verzorging-zonnebrand"><span class="txt">Zonnebrand</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-deet"><span class="txt">Insectenspray (deet)</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="verzorging-vuilniszakjes"><span class="txt">2x kleine vuilniszakjes (eigen afval)</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-pijnstillers"><span class="txt">Pijnstillers</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-blaarpleisters"><span class="txt">Blaarpleisters</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-zoutpillen"><span class="txt">Zoutpillen<span class="note">optioneel, bij veel zweten</span></span></label></li>
         </ul>
       </div>
 
       <div class="group">
         <div class="group-head">Uitrusting</div>
         <ul>
-          <li><label class="item"><input type="checkbox" data-pack id="uitrusting-rugzak"><span class="txt">Rugzak</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="uitrusting-rugzak"><span class="txt">Rugzak<span class="note">Stijntje neemt 25 l mee, Sjoerd 40 l — kies naar eigen voorkeur</span></span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="uitrusting-vuilniszak-groot"><span class="txt">Grote vuilniszak<span class="note">als waterdichte binnenzak in je rugzak</span></span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="uitrusting-waterfles"><span class="txt">Grote waterfles</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="uitrusting-stokken"><span class="txt">Wandelstokken</span></label></li>
@@ -381,6 +563,8 @@
           <li><label class="item"><input type="checkbox" data-pack id="eten-eiwitpoeder"><span class="txt">Eiwitpoeder + gedroogde havermoutpap</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="eten-worst"><span class="txt">Droge worst</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="eten-snickers"><span class="txt">Snickers / repen</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="eten-nootjes"><span class="txt">Zakje zoute nootjes</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="eten-mueslibars"><span class="txt">Mueslibars</span></label></li>
           <li><label class="item"><input type="checkbox" data-pack id="eten-brood"><span class="txt">Heel brood</span></label></li>
         </ul>
       </div>
@@ -403,8 +587,10 @@
 
 </main>
 
+<a class="fab" href="#paklijst" aria-label="Naar de paklijst" title="Naar de paklijst">🎒</a>
+
 <footer>
-  Fijne tocht! ⛰️ · Pyreneeën, september 2026
+  Fijne tocht! ⛰️ · Pyreneeën, 13–16 september 2026
 </footer>
 
 <script>
