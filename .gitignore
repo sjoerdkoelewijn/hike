@@ -1,0 +1,9 @@
+# originele, ongecomprimeerde bronfoto (blijft lokaal, niet in de repo)
+images/IMG_8519.jpg
+
+# interne build-instructies
+pyreneeen-website-instructions.md
+
+# systeem
+.DS_Store
+Thumbs.db

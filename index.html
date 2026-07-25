@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2F4D3A">
+<title>Pyreneeën Hutten Tocht — Paklijst & Info</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⛰️%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --green:#2F4D3A;
+    --amber:#C98A3B;
+    --cream:#FBF7F0;
+    --tip-bg:#F3EEE1;
+    --ink:#2B2B28;
+    --border:#E4DBCB;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    color:#fff;
+    text-align:center;
+    padding:0 20px;
+    min-height:clamp(360px,70vh,560px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:url("images/hero.jpg") center/cover no-repeat;
+    z-index:0;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(28,42,32,.45) 0%,rgba(28,42,32,.55) 60%,rgba(28,42,32,.82) 100%);
+    z-index:1;
+  }
+  .hero > *{position:relative;z-index:2}
+  .kicker{
+    color:#F0C58A;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.78rem;
+    font-weight:700;
+    margin-bottom:.7rem;
+  }
+  .hero h1{
+    font-size:clamp(2rem,7vw,3.2rem);
+    line-height:1.1;
+    font-weight:800;
+    text-shadow:0 2px 16px rgba(0,0,0,.35);
+    margin-bottom:.6rem;
+  }
+  .hero .subtitle{
+    font-size:clamp(1rem,3.5vw,1.25rem);
+    font-weight:400;
+    opacity:.95;
+    max-width:34ch;
+    margin-bottom:1.4rem;
+    text-shadow:0 1px 8px rgba(0,0,0,.35);
+  }
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    justify-content:center;
+  }
+  .chip{
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    backdrop-filter:blur(4px);
+    padding:.4rem .85rem;
+    border-radius:999px;
+    font-size:.85rem;
+    font-weight:600;
+    white-space:nowrap;
+  }
+
+  /* ---------- INTRO ---------- */
+  .intro{
+    font-size:1.08rem;
+    padding:2.4rem 0 1rem;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section.block{padding:1.6rem 0}
+  h2{
+    color:var(--green);
+    font-size:1.4rem;
+    font-weight:800;
+    padding-bottom:.5rem;
+    margin-bottom:.9rem;
+    border-bottom:2px solid var(--border);
+  }
+  h2 .num{color:var(--amber)}
+  .block p{margin-bottom:.9rem}
+  .block ul{margin:.2rem 0 1rem 1.2rem}
+  .block li{margin-bottom:.3rem}
+  strong{color:var(--green)}
+
+  /* ---------- TIP CALLOUT ---------- */
+  .tip{
+    background:var(--tip-bg);
+    border-left:4px solid var(--amber);
+    border-radius:0 8px 8px 0;
+    padding:.9rem 1.1rem;
+    margin:1rem 0;
+  }
+  .tip .tip-label{
+    display:block;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    font-size:.78rem;
+    font-weight:800;
+    color:var(--amber);
+    margin-bottom:.25rem;
+  }
+  .tip p{margin:0;color:var(--ink)}
+
+  /* ---------- PACKING LIST ---------- */
+  .packing-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:.6rem 1rem;
+    justify-content:space-between;
+    margin-bottom:1rem;
+  }
+  .counter{
+    background:var(--green);
+    color:#fff;
+    font-weight:700;
+    font-size:.9rem;
+    padding:.35rem .8rem;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .groups{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.2rem;
+  }
+  @media(min-width:700px){
+    .groups{grid-template-columns:1fr 1fr}
+  }
+  .group{
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+    background:#fff;
+    align-self:start;
+  }
+  .group-head{
+    background:var(--green);
+    color:#fff;
+    font-weight:700;
+    font-size:.95rem;
+    padding:.55rem .9rem;
+  }
+  .group ul{list-style:none;margin:0;padding:0}
+  .group li{border-top:1px solid var(--border)}
+  .group li:first-child{border-top:none}
+  .item{
+    display:flex;
+    align-items:flex-start;
+    gap:.7rem;
+    padding:.7rem .9rem;
+    min-height:44px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .item input{
+    width:22px;height:22px;
+    margin-top:.15rem;
+    flex:0 0 auto;
+    accent-color:var(--green);
+    cursor:pointer;
+  }
+  .item .txt{font-size:.98rem}
+  .item .note{
+    display:block;
+    font-size:.8rem;
+    color:#8a8577;
+    font-style:italic;
+  }
+  .item input:checked ~ .txt{
+    text-decoration:line-through;
+    color:#a7a291;
+  }
+  .item input:checked ~ .txt .note{color:#c3bfb0}
+
+  .reset-wrap{margin:1.4rem 0 0}
+  .reset-btn{
+    background:none;
+    border:1px solid var(--border);
+    color:#8a8577;
+    font-size:.88rem;
+    font-weight:600;
+    padding:.5rem 1rem;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  .reset-btn:hover{border-color:var(--amber);color:var(--amber)}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    color:#8a8577;
+    font-size:.85rem;
+    padding:2.5rem 20px 3rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <p class="kicker">Praktische gids</p>
+  <h1>Pyreneeën Hutten Tocht</h1>
+  <p class="subtitle">Wat je meeneemt en wat je kan verwachten</p>
+  <div class="chips">
+    <span class="chip">4 dagen</span>
+    <span class="chip">Halverwege september</span>
+    <span class="chip">Hut-naar-hut, geen tent nodig</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ===================== INTRO ===================== -->
+  <p class="intro">
+    We lopen 4 dagen door de Pyreneeën en slapen elke nacht in een berghut, dus geen tent, geen slaapmat en geen kookspullen nodig. Deze gids helpt je met inpakken en met wat je onderweg kan verwachten.
+  </p>
+
+  <!-- ===================== SECTIES ===================== -->
+  <section class="block">
+    <h2><span class="num">1.</span> Het weer</h2>
+    <p>We gaan halverwege september. Overdag is het meestal lekker weer, maar op hoogte kan het flink afkoelen, zeker 's ochtends vroeg en 's avonds. De zon is hier in de bergen veel sterker dan thuis. Houd ook rekening met regen: in de bergen kan een bui echt flink tekeergaan.</p>
+    <div class="tip">
+      <span class="tip-label">Tip — Bescherm jezelf tegen de zon</span>
+      <p>Draag zoveel mogelijk een shirt met lange mouwen, een buff om je nek en een hoed of pet met brede rand. Dan heb je veel minder zonnebrand nodig.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">2.</span> Dagritme</h2>
+    <p>We moeten uiterlijk om <strong>18:00</strong> bij de hut zijn. Het is slim om te mikken op <strong>16:00</strong>: onweer in de bergen begint meestal pas na die tijd, dus hoe eerder we binnen zijn, hoe kleiner de kans dat we in een bui lopen.</p>
+    <ul>
+      <li>16:00 — Streefaankomst bij de hut (voor het weer)</li>
+      <li>18:00 — Uiterste aankomsttijd</li>
+      <li>19:00 — Avondeten</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">3.</span> Eten</h2>
+    <p>Het avondeten in de hut hebben we al gereserveerd. Deze hutten liggen zo afgelegen dat ze alleen per helikopter bevoorraad worden, dus alles wordt gemaakt van producten die lang houdbaar zijn. Meestal begint het met linzensoep, dan een hoofdgerecht zoals stoofvlees met pasta of rijst, en als toetje eerst een beetje kaas en daarna iets zoets — heel Frans. Iedereen eet hetzelfde, tenzij je een dieetwens hebt doorgegeven.</p>
+    <p>Ontbijt en lunch nemen we liever zelf mee in plaats van via de hut, dat stelt vaak niet zoveel voor. We nemen een shakebeker mee met eiwitpoeder en gedroogde havermoutpap: gewoon water toevoegen en je hebt een vullend ontbijt of lunch. Daarnaast nemen we droge worst, een heel brood en Snickers mee. Dat is in onze ervaring genoeg.</p>
+    <div class="tip">
+      <span class="tip-label">Tip — Water onderweg</span>
+      <p>We hebben een waterfilter bij ons, dus je hoeft niet al je water de hele dag mee te dragen. We vullen onderweg bij uit rivieren en meertjes.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">4.</span> Slapen</h2>
+    <p>We slapen in een slaapzaal op stapelbedden, samen met andere wandelaars. De hutten waar wij naartoe gaan zijn vrij nieuw en comfortabel. De eerste nacht slapen we samen op een kamer, en dat lukt bij de tweede hut waarschijnlijk ook.</p>
+    <p>Er liggen dekens en kussens, maar die worden maar één keer per seizoen gewassen. Daarom is een <strong>slaapzak liner</strong> en een <strong>kussensloop</strong> verplicht mee te nemen.</p>
+    <div class="tip">
+      <span class="tip-label">Tip — Oordopjes</span>
+      <p>Je slaapt met meerdere mensen op één zaal, dus goede oordopjes zijn geen overbodige luxe. Neusdopjes tegen snurken mogen ook.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">5.</span> Douchen &amp; toilet</h2>
+    <p>Douchen gaat vaak met een muntje: je krijgt een paar minuten warm water dat je op pauze kunt zetten, een soort marinierdouche. In sommige hutten is koud douchen gratis.</p>
+    <p>Het toilet verschilt per hut. Soms is het een gewoon watertoilet, soms een gat in de grond. Bij de nieuwere hutten waar wij naartoe gaan is het meestal gewoon een watertoilet.</p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">6.</span> Afval</h2>
+    <p>Alles wat je mee de berg op neemt, neem je ook weer mee naar beneden. Neem daarom 1 of 2 kleine vuilniszakjes mee voor je eigen afval.</p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">7.</span> Telefoon &amp; opladen</h2>
+    <p>In de bergen is er meestal geen bereik. Zet je telefoon op vliegtuigstand, dan gaat de batterij een stuk langer mee. Opladen kan in de hut, maar neem voor de zekerheid ook een powerbank mee.</p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">8.</span> Kleding: merino wol</h2>
+    <p>Kies zoveel mogelijk shirts en sokken van merino wol. Vanaf ongeveer 80% merino gaat het niet stinken, ook niet na dagen zweten. Een shirt van 100% merino kun je makkelijk drie dagen achter elkaar dragen zonder dat het ruikt. Voor sokken geldt hetzelfde: merino maakt echt een groot verschil.</p>
+  </section>
+
+  <!-- ===================== PAKLIJST ===================== -->
+  <section class="block" id="paklijst">
+    <div class="packing-head">
+      <h2 style="border:none;margin:0;padding:0"><span class="num">9.</span> Paklijst</h2>
+      <span class="counter" id="counter">0 / 0 gepakt</span>
+    </div>
+
+    <div class="groups">
+
+      <div class="group">
+        <div class="group-head">Kleding</div>
+        <ul>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-broeken"><span class="txt">2 korte broeken, of 1 lange + 1 korte</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-shirt-lange-mouw"><span class="txt">Wandelshirt lange mouw (merino aan te raden)</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-tshirt-hut"><span class="txt">T-shirt voor in de hut</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-sokken"><span class="txt">4 paar sokken (bij voorkeur merino)</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-onderbroeken"><span class="txt">4 onderbroeken</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-fleece"><span class="txt">Fleece of trui</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-puffy"><span class="txt">Puffy jack</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-regenjas"><span class="txt">Regenjas (ademend)</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-hoed"><span class="txt">Wandelhoed of zonnepet</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-muts"><span class="txt">Muts</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-buff"><span class="txt">Buff</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="kleding-handschoenen"><span class="txt">Handschoenen<span class="note">optioneel, bij snel koud</span></span></label></li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <div class="group-head">Op je voeten</div>
+        <ul>
+          <li><label class="item"><input type="checkbox" data-pack id="voeten-schoenen"><span class="txt">Wandelschoenen</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="voeten-slippers"><span class="txt">Slippers voor in de hut</span></label></li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <div class="group-head">Slapen</div>
+        <ul>
+          <li><label class="item"><input type="checkbox" data-pack id="slapen-liner"><span class="txt">Slaapzak liner</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="slapen-kussensloop"><span class="txt">Kussensloop</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="slapen-oordopjes"><span class="txt">Oordopjes</span></label></li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <div class="group-head">Verzorging</div>
+        <ul>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-handdoek"><span class="txt">Sneldrogende handdoek</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-toilettas"><span class="txt">Minimale toilettas</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-wcpapier"><span class="txt">Wc-papier</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-zonnebrand"><span class="txt">Zonnebrand</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="verzorging-vuilniszakjes"><span class="txt">2x kleine vuilniszakjes (eigen afval)</span></label></li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <div class="group-head">Uitrusting</div>
+        <ul>
+          <li><label class="item"><input type="checkbox" data-pack id="uitrusting-rugzak"><span class="txt">Rugzak</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="uitrusting-vuilniszak-groot"><span class="txt">Grote vuilniszak<span class="note">als waterdichte binnenzak in je rugzak</span></span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="uitrusting-waterfles"><span class="txt">Grote waterfles</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="uitrusting-stokken"><span class="txt">Wandelstokken</span></label></li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <div class="group-head">Eten &amp; drinken onderweg</div>
+        <ul>
+          <li><label class="item"><input type="checkbox" data-pack id="eten-shakebeker"><span class="txt">Shakebeker</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="eten-eiwitpoeder"><span class="txt">Eiwitpoeder + gedroogde havermoutpap</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="eten-worst"><span class="txt">Droge worst</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="eten-snickers"><span class="txt">Snickers / repen</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="eten-brood"><span class="txt">Heel brood</span></label></li>
+        </ul>
+      </div>
+
+      <div class="group">
+        <div class="group-head">Elektronica</div>
+        <ul>
+          <li><label class="item"><input type="checkbox" data-pack id="elektronica-telefoon"><span class="txt">Telefoon</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="elektronica-powerbank"><span class="txt">Powerbank</span></label></li>
+          <li><label class="item"><input type="checkbox" data-pack id="elektronica-oplader"><span class="txt">Oplader/kabel</span></label></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="reset-wrap">
+      <button class="reset-btn" id="resetBtn" type="button">Paklijst resetten</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Fijne tocht! ⛰️ · Pyreneeën, september 2026
+</footer>
+
+<script>
+(function(){
+  var STORAGE_KEY = "pyrenees-2026-packing";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("input[data-pack]"));
+  var counter = document.getElementById("counter");
+
+  function load(){
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+  function save(state){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+  }
+
+  var state = load();
+
+  // Restore checked state before first paint
+  boxes.forEach(function(box){
+    if(state[box.id]) box.checked = true;
+  });
+
+  function updateCounter(){
+    var checked = boxes.filter(function(b){ return b.checked; }).length;
+    counter.textContent = checked + " / " + boxes.length + " gepakt";
+  }
+  updateCounter();
+
+  boxes.forEach(function(box){
+    box.addEventListener("change", function(){
+      state[box.id] = box.checked;
+      save(state);
+      updateCounter();
+    });
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    if(!confirm("Weet je zeker dat je de hele paklijst wilt resetten?")) return;
+    state = {};
+    save(state);
+    boxes.forEach(function(b){ b.checked = false; });
+    updateCounter();
+  });
+})();
+</script>
+
+</body>
+</html>
