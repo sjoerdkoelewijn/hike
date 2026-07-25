@@ -143,6 +143,18 @@
 
   /* ---------- FOOTER ---------- */
   footer{text-align:center;color:var(--muted);font-size:.85rem;padding:2rem 20px 3rem}
+
+  /* ---------- BEWERKMODUS (#edit) ---------- */
+  body.editmode{padding-bottom:70px}
+  body.editmode [contenteditable]{outline:1px dashed rgba(46,139,87,.55);outline-offset:3px;border-radius:3px}
+  body.editmode [contenteditable]:hover{background:rgba(46,139,87,.06)}
+  body.editmode [contenteditable]:focus{outline:2px solid var(--green);background:rgba(46,139,87,.10)}
+  #editbar{position:fixed;left:0;right:0;bottom:0;z-index:100;display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;justify-content:space-between;background:var(--green);color:#fff;padding:.7rem 1rem;box-shadow:0 -2px 12px rgba(0,0,0,.18);font-size:.9rem}
+  #editbar .eb-label{font-weight:600}
+  #editbar .eb-actions{display:flex;gap:.5rem}
+  #editbar button{font-family:inherit;font-weight:700;font-size:.88rem;border-radius:999px;padding:.45rem 1.1rem;cursor:pointer;border:1px solid rgba(255,255,255,.55);background:transparent;color:#fff}
+  #editbar #eb-download{background:#fff;color:var(--green);border-color:#fff}
+  #editbar button:hover{opacity:.88}
 </style>
 </head>
 <body>
@@ -478,6 +490,66 @@
   window.addEventListener("scroll", onScroll, {passive:true});
   window.addEventListener("resize", onScroll);
   onScroll();
+})();
+</script>
+
+<script>
+/* ---------- In-page bewerkmodus: open de site met #edit ---------- */
+(function(){
+  var EDIT_SELECTORS = [
+    ".hero .kicker",".hero h1",".hero .subtitle",".chip",
+    ".intro",".card h2",".card > p",".tip p",".tip-label",
+    ".card > ul > li",".etappe .day",".etappe .meta",
+    ".hut .naam",".hut .nacht",".stat .val",".stat .lab",
+    ".group-head",".item .txt","footer"
+  ].join(",");
+
+  function setEditable(on){
+    document.querySelectorAll(EDIT_SELECTORS).forEach(function(el){
+      if(on){ el.setAttribute("contenteditable","true"); el.setAttribute("spellcheck","false"); }
+      else { el.removeAttribute("contenteditable"); el.removeAttribute("spellcheck"); }
+    });
+    document.body.classList.toggle("editmode", on);
+  }
+
+  function download(){
+    var clone = document.documentElement.cloneNode(true);
+    var bar = clone.querySelector("#editbar"); if(bar) bar.remove();
+    var body = clone.querySelector("body"); if(body) body.classList.remove("editmode");
+    clone.querySelectorAll("[contenteditable]").forEach(function(el){ el.removeAttribute("contenteditable"); el.removeAttribute("spellcheck"); });
+    clone.querySelectorAll(".navbtn.active").forEach(function(el){ el.classList.remove("active"); });
+    var html = "<!DOCTYPE html>\n" + clone.outerHTML + "\n";
+    var blob = new Blob([html], {type:"text/html;charset=utf-8"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = "index.html";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+  }
+
+  function buildBar(){
+    if(document.getElementById("editbar")) return;
+    var bar = document.createElement("div");
+    bar.id = "editbar";
+    bar.innerHTML =
+      '<span class="eb-label">Bewerkmodus — klik op tekst om te wijzigen</span>' +
+      '<span class="eb-actions">' +
+        '<button type="button" id="eb-download">Download index.html</button>' +
+        '<button type="button" id="eb-done">Klaar</button>' +
+      '</span>';
+    document.body.appendChild(bar);
+    document.getElementById("eb-download").addEventListener("click", download);
+    document.getElementById("eb-done").addEventListener("click", function(){
+      setEditable(false);
+      bar.remove();
+      if(location.hash === "#edit"){ history.replaceState(null, "", location.pathname); }
+    });
+  }
+
+  function enable(){ setEditable(true); buildBar(); }
+
+  if(location.hash === "#edit") enable();
+  window.addEventListener("hashchange", function(){ if(location.hash === "#edit") enable(); });
 })();
 </script>
 
