@@ -123,7 +123,15 @@
   .group li{border-top:1px solid var(--border)}
   .group li:first-child{border-top:none}
   .item{display:flex;align-items:flex-start;gap:.7rem;padding:.7rem .9rem;min-height:44px;cursor:pointer;user-select:none}
-  .item input{width:22px;height:22px;margin-top:.15rem;flex:0 0 auto;accent-color:var(--green);cursor:pointer}
+  .item input{
+    appearance:none;-webkit-appearance:none;
+    width:22px;height:22px;margin-top:.15rem;flex:0 0 auto;
+    border:2px solid #CBBEA3;border-radius:5px;background:var(--card);
+    cursor:pointer;position:relative;transition:background .12s,border-color .12s;
+  }
+  .item input:checked{background:var(--green);border-color:var(--green)}
+  .item input:checked::after{content:"";position:absolute;left:5.5px;top:1.5px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .item input:focus-visible{outline:2px solid var(--green);outline-offset:2px}
   .item .txt{font-size:.98rem;color:var(--text)}
   .item .note{display:block;font-size:.8rem;color:var(--muted);font-style:italic}
   .item input:checked ~ .txt{text-decoration:line-through;color:#b3ac9c}
