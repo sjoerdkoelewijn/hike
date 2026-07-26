@@ -120,7 +120,7 @@
     {
       "title": "Dagritme",
       "showInMenu": true,
-      "menuLabel": "In de hut",
+      "menuLabel": "De hut",
       "body": "We moeten uiterlijk om **18:00** bij de hut zijn, anders slaan ze alarm en gaan ze je zoeken. Het is slim om **voor 16:00** aan te komen. Onweer in de bergen begint meestal pas na die tijd, dus hoe eerder we binnen zijn, hoe kleiner de kans dat we in een bui lopen. We moeten dus redelijk op tijd weg bij elke hut om niet te laat bij de volgende aan te komen.\n\n- 15:30 — Streefaankomst bij de hut\n- 18:00 — Uiterste aankomsttijd\n- 19:00 — Avondeten",
       "_template": "text"
     },
