@@ -42,9 +42,13 @@
 - [x] review met gebruiker: uiterlijk goedgekeurd ("ziet er goed uit")
 - [x] `/admin` lokaal werkend: base-pad omgevingsafhankelijk (BASE_PATH via cross-env; '/' lokaal, '/hike' prod). Form-editor laadt in lokale modus, alle blokken bewerkbaar, Save schrijft naar content/page.json
 - [x] checkbox-vinkje gecentreerd (via translate i.p.v. vaste px-offset)
-- [ ] gebruiker probeert /admin uit
-- [ ] Tina Cloud project + Client ID/token + GitHub Secret
-- [ ] GitHub Actions workflow + Pages op "GitHub Actions" zetten (cutover)
+- [x] Tina Cloud project aangemaakt en gekoppeld aan sjoerdkoelewijn/hike (main)
+- [x] Client ID als repo variable `TINA_PUBLIC_CLIENT_ID` (b3bf1628-d604-4b0c-a34c-926c171cf2d8)
+- [x] Read-Only token door gebruiker als repo secret `TINA_TOKEN` toegevoegd
+- [x] GitHub Actions workflow (.github/workflows/deploy.yml) + Pages op build_type=workflow (cutover gedaan)
+- [x] Eerste Actions-deploy geslaagd; live geverifieerd: site 200, /admin 200, hero 200, 40 items / 7 groepen / 3 hutten / 14 secties
+- [x] README.md met bewerk- en onderhoudsinstructies
+- [ ] Gebruiker test de bewerk-loop op /admin (inloggen → wijzigen → Save → ~2 min live)
 
 ## Lokaal draaien
 - Gebruiker (in echte terminal, TTY): `npm run tina:dev` → site op http://localhost:4321/ , CMS op http://localhost:4321/admin/
