@@ -102,6 +102,29 @@
       "_template": "text"
     },
     {
+      "title": "Kleding & het weer",
+      "showInMenu": true,
+      "menuLabel": "Kleding",
+      "body": "We gaan van 13 tot 16 september. Overdag is het dan (meestal) nog lekker weer en kan het best heet worden in de zon, maar 's avonds en in de ochtend kan het flink afkoelen op hoogte.\n\nDe zon is hier in het zuiden erg sterk, dus zorg dat je UV werende kleding meeneemt om in te lopen, die niet te warm is. Wij lopen in een dun merino wol shirt met lange mouwen, dat beschermd tegen de zon en houd je zowel koel als warm (ook als je nat van het zweet bent.) Katoen zou ik sowieso niet dragen, dat droogt langzaam en beschermd niet tegen kou als het nat wordt.\n\nHoud ook rekening met regen: in de bergen kan een bui echt flink tekeergaan. Om die reden heb ik ook een grote vuilniszak als extra liner in mijn rugzak, dan weet je zeker dat alles goed droog blijft.",
+      "tipLabel": "Bescherm jezelf tegen de zon",
+      "tipText": "Draag zoveel mogelijk een shirt met lange mouwen, een buff om je nek en een hoed met brede rand of (zonne)pet. Dan heb je ook minder zonnebrand nodig.",
+      "_template": "text"
+    },
+    {
+      "title": "Schoenen (& slippers!)",
+      "showInMenu": false,
+      "body": "Wij hebben allebei wandelsneakers ipv grote zware wandelschoenen. Ik vind dat een stuk lekkerder lopen, maar het kan wel zwaar op de enkels zijn als je het niet gewend bent. Wat wel belangrijk is dat ze stevige zolen hebben met goede grip en een \"rockplate\". Je loopt hier in de bergen de hele dag op harde scherpe stenen dus die wil je niet bij elke stap voelen.\n\nIk heb bewust schoenen gekocht die niet waterdicht zijn. Die ademen beter en bij een regenbui worden je schoenen toch wel nat, of je nou goretex hebt of niet. (is mijn ervaring iig.)\n\nEen ander belangrijk punt is dat je niet met je wandelschoenen naar binnen mag in de hut, dus binnen draag je slippers. Ik neem zelf lichte, waterbestendige slippers mee waar ik ook met sokken in kan. Bij de hutten hebben ze vaak ook crocs die je mag lenen.",
+      "_template": "text"
+    },
+    {
+      "title": "Merino wol",
+      "showInMenu": false,
+      "body": "Ik kan je aanraden om shirts en sokken van merino wol mee te nemen. Vanaf ongeveer 80% merino gaat het niet stinken, ook niet na dagen zweten. Een shirt van 100% merino kun je makkelijk drie dagen achter elkaar dragen zonder dat het echt gaat stinken. Voor sokken geldt hetzelfde: merino maakt echt een groot verschil.",
+      "tipLabel": "Twee outfits",
+      "tipText": "Het doel is om met één wandeloutfit en één droge outfit voor in de hut te reizen. Die droge outfit kan ook meteen je pyjama zijn.",
+      "_template": "text"
+    },
+    {
       "title": "Eten",
       "showInMenu": false,
       "body": "Het avondeten in de hut hebben we al gereserveerd. Deze hutten liggen zo afgelegen dat ze alleen per helikopter bevoorraad worden, dus alles wordt gemaakt van producten die lang houdbaar zijn.\n\nMeestal begint het met iets van linzensoep, dan meestal stoofvlees als hoofdgerecht met pasta of rijst en als toetje eerst een beetje kaas en daarna iets zoets. Iedereen eet hetzelfde, tenzij je een dieetwens hebt doorgegeven en je zit aan een grote tafel samen met allemaal andere wandelaars.\n\nOntbijt en lunch nemen we liever zelf mee in plaats van via de hut. Bij 2 van de 3 hutten zit het ontbijt er standaard bij. Voor de andere dagen en de lunch kunnen we zelf wat meenemen.\n\nWat wij sinds kort doen is een shakebeker meenemen en een zak met voorgemixte eiwitpoeder, melkpoeder en gemalen havermout: gewoon water toevoegen en je hebt een vullend ontbijt of lunch. Daarnaast nemen we droge worst, brood, snickers, zoute nootjes en mueslibars mee. Dat is in onze ervaring genoeg.\n\nAls je wil kun je dus ook lunch (en ontbijt) bij de hut bijboeken, maar ik zou sowieso wat snacks meenemen.\n\nEten en drinken voor onderweg kunnen we hier kopen: we stoppen bij de supermarkt op de weg vanaf het vliegveld.",
@@ -115,12 +138,6 @@
       "body": "We slapen in een slaapzaal op stapelbedden, samen met andere wandelaars. De hutten waar wij naartoe gaan zijn vrij nieuw en comfortabel. De eerste nacht slapen we samen op een kamer, en dat lukt bij de tweede hut waarschijnlijk ook.\n\nEr liggen dekens en kussens, maar die worden maar één keer per seizoen gewassen. Daarom is een **lakenzak** en een **kussensloop** verplicht mee te nemen. Ik neem zelf ook nog een extra klein laken mee omdat de lakenzak wat krap is bij mijn bovenlichaam.",
       "tipLabel": "Oordopjes",
       "tipText": "Je slaapt met meerdere mensen op één zaal, dus goede oordopjes zijn geen overbodige luxe.",
-      "_template": "text"
-    },
-    {
-      "title": "Schoenen (& slippers!)",
-      "showInMenu": false,
-      "body": "Wij hebben allebei wandelsneakers ipv grote zware wandelschoenen. Ik vind dat een stuk lekkerder lopen, maar het kan wel zwaar op de enkels zijn als je het niet gewend bent. Wat wel belangrijk is dat ze stevige zolen hebben met goede grip en een \"rockplate\". Je loopt hier in de bergen de hele dag op harde scherpe stenen dus die wil je niet bij elke stap voelen.\n\nIk heb bewust schoenen gekocht die niet waterdicht zijn. Die ademen beter en bij een regenbui worden je schoenen toch wel nat, of je nou goretex hebt of niet. (is mijn ervaring iig.)\n\nEen ander belangrijk punt is dat je niet met je wandelschoenen naar binnen mag in de hut, dus binnen draag je slippers. Ik neem zelf lichte, waterbestendige slippers mee waar ik ook met sokken in kan. Bij de hutten hebben ze vaak ook crocs die je mag lenen.",
       "_template": "text"
     },
     {
@@ -139,23 +156,6 @@
       "title": "Telefoon & opladen",
       "showInMenu": false,
       "body": "In de bergen is er meestal geen bereik. Zet je telefoon op vliegtuigstand, dan gaat de batterij een stuk langer mee. Opladen kan in de hut, maar neem voor de zekerheid ook een (kleine) powerbank mee.",
-      "_template": "text"
-    },
-    {
-      "title": "Kleding & het weer",
-      "showInMenu": true,
-      "menuLabel": "Kleding",
-      "body": "We gaan van 13 tot 16 september. Overdag is het dan (meestal) nog lekker weer en kan het best heet worden in de zon, maar 's avonds en in de ochtend kan het flink afkoelen op hoogte.\n\nDe zon is hier in het zuiden erg sterk, dus zorg dat je UV werende kleding meeneemt om in te lopen, die niet te warm is. Wij lopen in een dun merino wol shirt met lange mouwen, dat beschermd tegen de zon en houd je zowel koel als warm (ook als je nat van het zweet bent.) Katoen zou ik sowieso niet dragen, dat droogt langzaam en beschermd niet tegen kou als het nat wordt.\n\nHoud ook rekening met regen: in de bergen kan een bui echt flink tekeergaan. Om die reden heb ik ook een grote vuilniszak als extra liner in mijn rugzak, dan weet je zeker dat alles goed droog blijft.",
-      "tipLabel": "Bescherm jezelf tegen de zon",
-      "tipText": "Draag zoveel mogelijk een shirt met lange mouwen, een buff om je nek en een hoed met brede rand of (zonne)pet. Dan heb je ook minder zonnebrand nodig.",
-      "_template": "text"
-    },
-    {
-      "title": "Merino wol",
-      "showInMenu": false,
-      "body": "Ik kan je aanraden om shirts en sokken van merino wol mee te nemen. Vanaf ongeveer 80% merino gaat het niet stinken, ook niet na dagen zweten. Een shirt van 100% merino kun je makkelijk drie dagen achter elkaar dragen zonder dat het echt gaat stinken. Voor sokken geldt hetzelfde: merino maakt echt een groot verschil.",
-      "tipLabel": "Twee outfits",
-      "tipText": "Het doel is om met één wandeloutfit en één droge outfit voor in de hut te reizen. Die droge outfit kan ook meteen je pyjama zijn.",
       "_template": "text"
     },
     {
