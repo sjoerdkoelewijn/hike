@@ -15,7 +15,7 @@
     --green-dark:#256F45;
     --ink:#2A4030;      /* koppen, diep bosgroen */
     --text:#3C3A33;     /* bodytekst */
-    --muted:#8A8172;
+    --muted:#6E6555;
     --bg:#E9E1D0;       /* beige canvas */
     --card:#F7F1E3;     /* warme zand kaart */
     --surface:#F2EBDB;  /* sub-tegel */
@@ -31,6 +31,7 @@
     font-family:"Manrope",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     background:var(--bg);
     color:var(--text);
+    font-size:17px;
     line-height:1.65;
     -webkit-text-size-adjust:100%;
   }
@@ -91,7 +92,7 @@
   @media(min-width:600px){ .route-stats{grid-template-columns:repeat(4,1fr)} }
   .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.85rem .8rem;text-align:center}
   .stat .val{display:block;font-size:1.3rem;font-weight:800;color:var(--ink);line-height:1.2}
-  .stat .lab{display:block;font-size:.75rem;color:var(--muted);margin-top:.15rem}
+  .stat .lab{display:block;font-size:.8125rem;color:var(--muted);margin-top:.15rem}
 
   /* ---------- BUTTON LINK ---------- */
   .route-link{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;padding:.7rem 1.4rem;border-radius:999px;transition:background .15s}
@@ -102,12 +103,12 @@
   .etappe{padding:.9rem 0;border-top:1px solid var(--border)}
   .etappe:first-child{border-top:none}
   .etappe .day{font-weight:700;color:var(--ink);display:block}
-  .etappe .meta{font-size:.88rem;color:var(--muted)}
+  .etappe .meta{font-size:.94rem;color:var(--muted)}
 
   /* ---------- HUTTEN ---------- */
   .hut{padding:1rem 0;border-top:1px solid var(--border)}
   .hut:first-child{border-top:none}
-  .hut .nacht{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--green-dark);font-weight:800}
+  .hut .nacht{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--green-dark);font-weight:800}
   .hut .naam{font-weight:700;color:var(--ink);font-size:1.05rem;margin:.1rem 0 .3rem}
   .hut a.hut-link{font-size:.9rem;font-weight:600}
 
@@ -131,8 +132,8 @@
   .item input:checked{background:var(--green);border-color:var(--green)}
   .item input:checked::after{content:"";position:absolute;left:5.5px;top:1.5px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
   .item input:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-  .item .txt{font-size:.98rem;color:var(--text)}
-  .item .note{display:block;font-size:.8rem;color:var(--muted);font-style:italic}
+  .item .txt{font-size:1.04rem;color:var(--text)}
+  .item .note{display:block;font-size:.86rem;color:var(--muted);font-style:italic}
   .item input:checked ~ .txt{text-decoration:line-through;color:#b3ac9c}
   .item input:checked ~ .txt .note{color:#c6bfae}
 
@@ -141,7 +142,7 @@
   .reset-btn:hover{border-color:var(--green);color:var(--green)}
 
   /* ---------- FOOTER ---------- */
-  footer{text-align:center;color:var(--muted);font-size:.85rem;padding:2rem 20px 3rem}
+  footer{text-align:center;color:var(--muted);font-size:.9rem;padding:2rem 20px 3rem}
   .edit-link{display:inline-block;margin-top:.5rem;color:var(--muted);font-weight:400;font-size:.78rem;text-decoration:underline;text-underline-offset:2px}
   .edit-link:hover{color:var(--green)}
 
@@ -228,7 +229,7 @@
     <h2>Naar de parkeerplaats</h2>
     <p>Vanaf het huis in Saman rijden we naar de parkeerplaats bij <strong>Lac d'Orédon</strong> (Aragnouet), waar de tocht begint en eindigt. Het is ongeveer <strong>2 uur rijden</strong>, en we passen met z'n vieren in onze auto.</p>
     <a class="route-link" href="https://maps.app.goo.gl/qmPRmtyCa1KiY85g7" target="_blank" rel="noopener">Open de route in Google Maps →</a>
-    <p style="font-size:.88rem;color:var(--muted);margin-top:.9rem">Het laatste stuk naar Lac d'Orédon is een smalle bergweg — reken voor de zekerheid wat ruimer.</p>
+    <p style="font-size:.94rem;color:var(--muted);margin-top:.9rem">Het laatste stuk naar Lac d'Orédon is een smalle bergweg — reken voor de zekerheid wat ruimer.</p>
   </section>
 
   <!-- ===================== 3. DE HUTTEN ===================== -->
