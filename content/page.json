@@ -13,7 +13,7 @@
   "blocks": [
     {
       "title": "De route",
-      "showInMenu": false,
+      "showInMenu": true,
       "menuLabel": "Route",
       "intro": "We lopen 4 dagen door de Pyreneeën en slapen elke nacht in een berghut in het Néouvielle-massief. We beginnen en eindigen bij dezelfde parking en slapen onderweg in drie verschillende hutten.",
       "stats": [
