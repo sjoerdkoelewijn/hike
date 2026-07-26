@@ -95,14 +95,6 @@
       "_template": "huts"
     },
     {
-      "title": "Het weer",
-      "showInMenu": false,
-      "body": "We gaan van 13 tot 16 september. Overdag is het dan (meestal) nog lekker weer en kan het best heet worden in de zon, maar 's avonds en in de ochtend kan het flink afkoelen op hoogte.\n\nDe zon is hier in het zuiden erg sterk, dus zorg dat je UV werende kleding meeneemt om in te lopen, die niet te warm is. Wij lopen in een dun merino wol shirt met lange mouwen, dat beschermd tegen de zon en houd je zowel koel als warm (ook als je nat van het zweet bent.) Katoen zou ik sowieso niet dragen, dat droogt langzaam en beschermd niet tegen kou als het nat wordt.\n\nHoud ook rekening met regen: in de bergen kan een bui echt flink tekeergaan. Om die reden heb ik ook een grote vuilniszak als extra liner in mijn rugzak, dan weet je zeker dat alles goed droog blijft.",
-      "tipLabel": "Bescherm jezelf tegen de zon",
-      "tipText": "Draag zoveel mogelijk een shirt met lange mouwen, een buff om je nek en een hoed met brede rand of (zonne)pet. Dan heb je ook minder zonnebrand nodig.",
-      "_template": "text"
-    },
-    {
       "title": "Dagritme",
       "showInMenu": true,
       "menuLabel": "In de hut",
@@ -147,6 +139,15 @@
       "title": "Telefoon & opladen",
       "showInMenu": false,
       "body": "In de bergen is er meestal geen bereik. Zet je telefoon op vliegtuigstand, dan gaat de batterij een stuk langer mee. Opladen kan in de hut, maar neem voor de zekerheid ook een (kleine) powerbank mee.",
+      "_template": "text"
+    },
+    {
+      "title": "Kleding & het weer",
+      "showInMenu": true,
+      "menuLabel": "Kleding",
+      "body": "We gaan van 13 tot 16 september. Overdag is het dan (meestal) nog lekker weer en kan het best heet worden in de zon, maar 's avonds en in de ochtend kan het flink afkoelen op hoogte.\n\nDe zon is hier in het zuiden erg sterk, dus zorg dat je UV werende kleding meeneemt om in te lopen, die niet te warm is. Wij lopen in een dun merino wol shirt met lange mouwen, dat beschermd tegen de zon en houd je zowel koel als warm (ook als je nat van het zweet bent.) Katoen zou ik sowieso niet dragen, dat droogt langzaam en beschermd niet tegen kou als het nat wordt.\n\nHoud ook rekening met regen: in de bergen kan een bui echt flink tekeergaan. Om die reden heb ik ook een grote vuilniszak als extra liner in mijn rugzak, dan weet je zeker dat alles goed droog blijft.",
+      "tipLabel": "Bescherm jezelf tegen de zon",
+      "tipText": "Draag zoveel mogelijk een shirt met lange mouwen, een buff om je nek en een hoed met brede rand of (zonne)pet. Dan heb je ook minder zonnebrand nodig.",
       "_template": "text"
     },
     {
