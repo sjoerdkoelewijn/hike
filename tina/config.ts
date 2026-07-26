@@ -48,6 +48,7 @@ export default defineConfig({
               {
                 name: 'text',
                 label: 'Tekstsectie',
+                ui: { itemProps: (i: any) => ({ label: i?.title || 'Tekstsectie' }) },
                 fields: [
                   { type: 'string', name: 'title', label: 'Kop' },
                   ...menuFields,
@@ -67,6 +68,7 @@ export default defineConfig({
               {
                 name: 'route',
                 label: 'Route',
+                ui: { itemProps: (i: any) => ({ label: i?.title ? `${i.title} (route)` : 'Route' }) },
                 fields: [
                   { type: 'string', name: 'title', label: 'Kop' },
                   ...menuFields,
@@ -94,6 +96,7 @@ export default defineConfig({
               {
                 name: 'huts',
                 label: 'Hutten',
+                ui: { itemProps: (i: any) => ({ label: i?.title ? `${i.title} (hutten)` : 'Hutten' }) },
                 fields: [
                   { type: 'string', name: 'title', label: 'Kop' },
                   ...menuFields,
@@ -113,6 +116,7 @@ export default defineConfig({
               {
                 name: 'packing',
                 label: 'Paklijst',
+                ui: { itemProps: (i: any) => ({ label: i?.title ? `${i.title} (paklijst)` : 'Paklijst' }) },
                 fields: [
                   { type: 'string', name: 'title', label: 'Kop' },
                   ...menuFields,
