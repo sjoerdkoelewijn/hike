@@ -1,0 +1,87 @@
+---
+import '@fontsource/manrope/400.css';
+import '@fontsource/manrope/500.css';
+import '@fontsource/manrope/600.css';
+import '@fontsource/manrope/700.css';
+import '@fontsource/manrope/800.css';
+import '../styles/global.css';
+
+const { hero, footerText } = Astro.props;
+const title = 'Pyreneeën Hutten Tocht — Paklijst & Info';
+const description = hero?.subtitle || 'Wat je meeneemt en wat je kan verwachten';
+---
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2E8B57" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⛰️%3C/text%3E%3C/svg%3E"
+  />
+</head>
+<body>
+  <slot />
+  <footer>{footerText || 'Fijne tocht! ⛰️'}</footer>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = 'pyrenees-2026-packing';
+      var boxes = Array.prototype.slice.call(document.querySelectorAll('input[data-pack]'));
+      var counter = document.getElementById('counter');
+
+      function load() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+        catch (e) { return {}; }
+      }
+      function save(s) {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch (e) {}
+      }
+
+      var state = load();
+      boxes.forEach(function (b) { if (state[b.id]) b.checked = true; });
+
+      function updateCounter() {
+        if (!counter) return;
+        var c = boxes.filter(function (b) { return b.checked; }).length;
+        var word = counter.getAttribute('data-word') || 'gepakt';
+        counter.textContent = c + ' / ' + boxes.length + ' ' + word;
+      }
+      updateCounter();
+
+      boxes.forEach(function (b) {
+        b.addEventListener('change', function () {
+          state[b.id] = b.checked; save(state); updateCounter();
+        });
+      });
+
+      var resetBtn = document.getElementById('resetBtn');
+      if (resetBtn) resetBtn.addEventListener('click', function () {
+        if (!confirm('Weet je zeker dat je de hele paklijst wilt resetten?')) return;
+        state = {}; save(state);
+        boxes.forEach(function (b) { b.checked = false; });
+        updateCounter();
+      });
+
+      // Scrollspy: markeer het actieve onderdeel in de navbalk
+      var targets = Array.prototype.slice
+        .call(document.querySelectorAll(".navbtn[href^='#']"))
+        .map(function (a) { return { btn: a, el: document.getElementById(a.getAttribute('href').slice(1)) }; });
+      function onScroll() {
+        var y = window.pageYOffset + 100;
+        var current = targets[0];
+        targets.forEach(function (t) { if (t.el && t.el.offsetTop <= y) current = t; });
+        targets.forEach(function (t) { t.btn.classList.toggle('active', t === current); });
+      }
+      if (targets.length) {
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        onScroll();
+      }
+    })();
+  </script>
+</body>
+</html>

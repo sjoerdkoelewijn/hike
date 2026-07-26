@@ -1,0 +1,28 @@
+---
+import { mdToHtml } from '../../lib/markdown';
+const { block } = Astro.props;
+const bodyHtml = mdToHtml(block?.body);
+const hasTip = block?.tipLabel || block?.tipText;
+---
+<section class="card" id={block._anchor}>
+  {block.title && <h2>{block.title}</h2>}
+  {bodyHtml && <div class="rich" set:html={bodyHtml} />}
+  {block.buttonUrl && (
+    <a
+      class={block.buttonGhost ? 'route-link ghost' : 'route-link'}
+      style="margin-top:1rem"
+      href={block.buttonUrl}
+      target="_blank"
+      rel="noopener"
+    >{block.buttonLabel || 'Open →'}</a>
+  )}
+  {block.footnote && (
+    <p style="font-size:.94rem;color:var(--muted);margin-top:.9rem">{block.footnote}</p>
+  )}
+  {hasTip && (
+    <div class="tip">
+      {block.tipLabel && <span class="tip-label">{block.tipLabel}</span>}
+      {block.tipText && <p>{block.tipText}</p>}
+    </div>
+  )}
+</section>

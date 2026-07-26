@@ -1,0 +1,15 @@
+---
+const { block } = Astro.props;
+const huts = block?.huts ?? [];
+---
+<section class="card" id={block._anchor}>
+  {block.title && <h2>{block.title}</h2>}
+  {huts.map((h: { nacht?: string; naam?: string; info?: string; url?: string; urlLabel?: string }) => (
+    <div class="hut">
+      {h.nacht && <span class="nacht">{h.nacht}</span>}
+      {h.naam && <div class="naam">{h.naam}</div>}
+      {h.info && <p>{h.info}</p>}
+      {h.url && <a class="hut-link" href={h.url} target="_blank" rel="noopener">{h.urlLabel || 'Meer info →'}</a>}
+    </div>
+  ))}
+</section>

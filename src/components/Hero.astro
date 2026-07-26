@@ -1,0 +1,15 @@
+---
+const { hero } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const img = hero?.image ? `${base}/${String(hero.image).replace(/^\//, '')}` : '';
+---
+<header class="hero" style={`--hero-image: url('${img}')`}>
+  {hero?.kicker && <p class="kicker">{hero.kicker}</p>}
+  <h1>{hero?.title}</h1>
+  {hero?.subtitle && <p class="subtitle">{hero.subtitle}</p>}
+  {hero?.chips?.length ? (
+    <div class="chips">
+      {hero.chips.map((c: string) => <span class="chip">{c}</span>)}
+    </div>
+  ) : null}
+</header>

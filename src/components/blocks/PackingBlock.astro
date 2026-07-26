@@ -1,0 +1,46 @@
+---
+import { slugify } from '../../lib/slug';
+const { block } = Astro.props;
+const counterWord = block?.counterWord || 'gepakt';
+const resetLabel = block?.resetLabel || 'Paklijst resetten';
+
+const seen = new Map<string, number>();
+function itemId(label: string): string {
+  let base = 'pak-' + slugify(label);
+  const n = seen.get(base) ?? 0;
+  seen.set(base, n + 1);
+  return n > 0 ? `${base}-${n + 1}` : base;
+}
+
+const groups = (block?.groups ?? []).map((g: any) => ({
+  name: g?.name,
+  items: (g?.items ?? []).map((it: any) => ({ label: it?.label, note: it?.note, id: itemId(it?.label || '') })),
+}));
+const total = groups.reduce((n: number, g: any) => n + g.items.length, 0);
+---
+<section class="card" id={block._anchor}>
+  <div class="packing-head">
+    {block.title && <h2>{block.title}</h2>}
+    <span class="counter" id="counter" data-word={counterWord}>0 / {total} {counterWord}</span>
+  </div>
+  <div class="groups">
+    {groups.map((g: any) => (
+      <div class="group">
+        <div class="group-head">{g.name}</div>
+        <ul>
+          {g.items.map((it: any) => (
+            <li>
+              <label class="item">
+                <input type="checkbox" data-pack id={it.id} />
+                <span class="txt">{it.label}{it.note && <span class="note">{it.note}</span>}</span>
+              </label>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <div class="reset-wrap">
+    <button class="reset-btn" id="resetBtn" type="button">{resetLabel}</button>
+  </div>
+</section>

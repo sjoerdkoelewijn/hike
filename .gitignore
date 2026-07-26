@@ -3,6 +3,17 @@ images/IMG_8519.jpg
 
 # interne build-instructies
 pyreneeen-website-instructions.md
+tina-cms-instructions.md
+
+# node / astro / tina build-artefacten
+node_modules/
+dist/
+.astro/
+tina/__generated__/
+public/admin/
+
+# secrets
+.env
 
 # systeem
 .DS_Store

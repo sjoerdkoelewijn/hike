@@ -1,0 +1,227 @@
+{
+  "hero": {
+    "kicker": "Praktische gids",
+    "title": "Pyreneeën Hutten Tocht",
+    "subtitle": "Wat je meeneemt en wat je kan verwachten",
+    "image": "/images/hero.jpg",
+    "chips": ["4 dagen", "13–16 september", "Hut-naar-hut"]
+  },
+  "blocks": [
+    {
+      "_template": "route",
+      "title": "De route",
+      "showInMenu": true,
+      "menuLabel": "De route",
+      "intro": "We lopen 4 dagen door de Pyreneeën en slapen elke nacht in een berghut in het Néouvielle-massief. We beginnen en eindigen bij dezelfde parking en slapen onderweg in drie verschillende hutten.",
+      "stats": [
+        { "value": "32,07 km", "label": "Afstand" },
+        { "value": "2.235 m", "label": "Stijging" },
+        { "value": "13,5–14,5 u", "label": "Looptijd" },
+        { "value": "4", "label": "Etappes" }
+      ],
+      "alltrailsUrl": "https://www.alltrails.com/explore/custom-routes/custom-route-340e4b0",
+      "alltrailsLabel": "Open de route op AllTrails →",
+      "etappes": [
+        { "day": "Dag 1 — naar Refuge de l'Oule", "meta": "6,7 km · ↗ 648 m · ↘ 446 m · 3,5 – 4,5 uur" },
+        { "day": "Dag 2 — naar Refuge Campana de Cloutou", "meta": "9,3 km · ↗ 744 m · ↘ 350 m · 5 – 6 uur" },
+        { "day": "Dag 3 — naar Refuge d'Aygues-Cluses", "meta": "7,1 km · ↗ 447 m · ↘ 519 m · 4 – 5,5 uur" },
+        { "day": "Dag 4 — terug naar de parking", "meta": "8,9 km · ↗ 396 m · ↘ 677 m · 4 – 4,5 uur" }
+      ]
+    },
+    {
+      "_template": "text",
+      "title": "Naar de parkeerplaats",
+      "showInMenu": false,
+      "body": "Vanaf het huis in Saman rijden we naar de parkeerplaats bij **Lac d'Orédon** (Aragnouet), waar de tocht begint en eindigt. Het is ongeveer **2 uur rijden**, en we passen met z'n vieren in onze auto.",
+      "buttonLabel": "Open in Google Maps →",
+      "buttonUrl": "https://maps.app.goo.gl/qmPRmtyCa1KiY85g7",
+      "buttonGhost": true,
+      "footnote": "Het laatste stuk naar Lac d'Orédon is een smalle bergweg — reken voor de zekerheid wat ruimer."
+    },
+    {
+      "_template": "huts",
+      "title": "De hutten",
+      "showInMenu": false,
+      "huts": [
+        {
+          "nacht": "Nacht 1",
+          "naam": "Refuge de l'Oule",
+          "info": "Op 1.820 m bij het Lac de l'Oule, met plek voor 34 personen — de laagste van onze drie hutten.",
+          "url": "https://www.visit-neouvielle.com/fiche-hebergement-refuge-de-l-oule-neouvielle-bigorre-hx25a1megvdf.html",
+          "urlLabel": "Meer info →"
+        },
+        {
+          "nacht": "Nacht 2",
+          "naam": "Refuge Campana de Cloutou",
+          "info": "Op 2.225 m de hoogst gelegen hut van de tocht; een recent vernieuwde hut van hout en lokale steen, met zo'n 36 slaapplaatsen.",
+          "url": "https://refugecampanadecloutou.ffcam.fr/home.html",
+          "urlLabel": "Meer info →"
+        },
+        {
+          "nacht": "Nacht 3",
+          "naam": "Refuge d'Aygues-Cluses",
+          "info": "Gloednieuw: geopend in juni 2023, op 2.135 m, met 35 slaapplaatsen.",
+          "url": "https://www.visit-neouvielle.com/fiche-hebergement-refuge-d-aygues-cluses-neouvielle-bigorre-8hdlfjrygjf.html",
+          "urlLabel": "Meer info →"
+        }
+      ]
+    },
+    {
+      "_template": "text",
+      "title": "Het weer",
+      "showInMenu": false,
+      "body": "We gaan van 13 tot 16 september. Overdag is het dan (meestal) nog lekker weer en kan het best heet worden in de zon, maar 's avonds en in de ochtend kan het flink afkoelen op hoogte.\n\nDe zon is hier in het zuiden erg sterk, dus zorg dat je UV werende kleding meeneemt om in te lopen, die niet te warm is. Wij lopen in een dun wollen shirt met lange mouwen, dat beschermd tegen de zon en houd je zowel koel als warm (ook als je nat van het zweet bent.) Katoen zou ik sowieso niet dragen, dat droogt langzaam en beschermd niet tegen kou als het nat wordt.\n\nHoud ook rekening met regen: in de bergen kan een bui echt flink tekeergaan. Om die reden heb ik ook een grote vuilniszak als extra liner in mijn rugzak, dan weet je zeker dat alles goed droog blijft.",
+      "tipLabel": "Bescherm jezelf tegen de zon",
+      "tipText": "Draag zoveel mogelijk een shirt met lange mouwen, een buff om je nek en een hoed met brede rand of zonnepet. Dan heb je ook minder zonnebrand nodig."
+    },
+    {
+      "_template": "text",
+      "title": "Dagritme",
+      "showInMenu": true,
+      "menuLabel": "In de hut",
+      "body": "We moeten uiterlijk om **18:00** bij de hut zijn, anders slaan ze alarm en gaan ze je zoeken. Het is slim om **voor 16:00** aan te komen. Onweer in de bergen begint meestal pas na die tijd, dus hoe eerder we binnen zijn, hoe kleiner de kans dat we in een bui lopen. We moeten dus redelijk op tijd weg bij elke hut om niet te laat bij de volgende aan te komen.\n\n- 15:30 — Streefaankomst bij de hut\n- 18:00 — Uiterste aankomsttijd\n- 19:00 — Avondeten"
+    },
+    {
+      "_template": "text",
+      "title": "Eten",
+      "showInMenu": false,
+      "body": "Het avondeten in de hut hebben we al gereserveerd. Deze hutten liggen zo afgelegen dat ze alleen per helikopter bevoorraad worden, dus alles wordt gemaakt van producten die lang houdbaar zijn.\n\nMeestal begint het met iets van linzensoep, dan meestal stoofvlees als hoofdgerecht met pasta of rijst en als toetje eerst een beetje kaas en daarna iets zoets. Iedereen eet hetzelfde, tenzij je een dieetwens hebt doorgegeven en je zit aan een grote tafel samen met allemaal andere wandelaars.\n\nOntbijt en lunch nemen we liever zelf mee in plaats van via de hut. Bij 2 van de 3 hutten zit het ontbijt er standaard bij. Voor de andere dagen en de lunch kunnen we zelf wat meenemen.\n\nWat wij sinds kort doen is een shakebeker meenemen en een zak met voorgemixte eiwitpoeder, melkpoeder en gemalen havermout: gewoon water toevoegen en je hebt een vullend ontbijt of lunch. Daarnaast nemen we droge worst, brood, snickers, zoute nootjes en mueslibars mee. Dat is in onze ervaring genoeg.\n\nAls je wil kun je dus ook lunch (en ontbijt) bij de hut bijboeken, maar ik zou sowieso wat snacks meenemen.\n\nEten en drinken voor onderweg kunnen we hier kopen: we stoppen bij de supermarkt op de weg vanaf het vliegveld.",
+      "tipLabel": "Water onderweg",
+      "tipText": "We hebben een waterfilter bij ons, dus je hoeft niet al je water de hele dag mee te dragen. We kunnen dus onderweg bijvullen rivieren en meertjes."
+    },
+    {
+      "_template": "text",
+      "title": "Slapen",
+      "showInMenu": false,
+      "body": "We slapen in een slaapzaal op stapelbedden, samen met andere wandelaars. De hutten waar wij naartoe gaan zijn vrij nieuw en comfortabel. De eerste nacht slapen we samen op een kamer, en dat lukt bij de tweede hut waarschijnlijk ook.\n\nEr liggen dekens en kussens, maar die worden maar één keer per seizoen gewassen. Daarom is een **lakenzak** en een **kussensloop** verplicht mee te nemen. Ik neem zelf ook nog een extra klein laken mee omdat de lakenzak wat krap is bij mijn bovenlichaam.",
+      "tipLabel": "Oordopjes",
+      "tipText": "Je slaapt met meerdere mensen op één zaal, dus goede oordopjes zijn geen overbodige luxe."
+    },
+    {
+      "_template": "text",
+      "title": "Schoenen (& slippers!)",
+      "showInMenu": false,
+      "body": "Wij hebben allebei wandelsneakers ipv grote zware wandelschoenen. Ik vind dat een stuk lekkerder lopen, maar het kan wel zwaar op de enkels zijn als je het niet gewend bent. Wat wel belangrijk is dat ze stevige zolen hebben met goede grip en een \"rockplate\". Je loopt hier in de bergen de hele dag op harde scherpe stenen dus die wil je niet bij elke stap voelen.\n\nIk heb bewust schoenen gekocht die niet waterdicht zijn. Die ademen beter en bij een regenbui worden je schoenen toch wel nat, of je nou goretex hebt of niet. (is mijn ervaring iig.)\n\nEen ander belangrijk punt is dat je niet met je wandelschoenen naar binnen mag in de hut, dus binnen draag je slippers. Ik neem zelf lichte, waterbestendige slippers mee waar ik ook met sokken in kan. Bij de hutten hebben ze vaak ook crocs die je mag lenen."
+    },
+    {
+      "_template": "text",
+      "title": "Douchen & toilet",
+      "showInMenu": false,
+      "body": "Douchen gaat vaak met een muntje: je krijgt een paar minuten warm water dat je op pauze kunt zetten. In sommige hutten is koud douchen gratis.\n\nHet toilet verschilt per hut. Soms is het een gewoon watertoilet, soms een WC wat eigenlijk een gat in de grond is. Bij de nieuwere hutten waar wij naartoe gaan is het meestal gewoon een watertoilet."
+    },
+    {
+      "_template": "text",
+      "title": "Afval",
+      "showInMenu": false,
+      "body": "Alles wat je mee de berg op neemt, moet je ook weer mee naar beneden nemen. Neem daarom 1 of 2 kleine pedaalemmerzakjes mee voor je eigen afval."
+    },
+    {
+      "_template": "text",
+      "title": "Telefoon & opladen",
+      "showInMenu": false,
+      "body": "In de bergen is er meestal geen bereik. Zet je telefoon op vliegtuigstand, dan gaat de batterij een stuk langer mee. Opladen kan in de hut, maar neem voor de zekerheid ook een (kleine) powerbank mee."
+    },
+    {
+      "_template": "text",
+      "title": "Merino wol",
+      "showInMenu": false,
+      "body": "Ik kan je aanraden om shirts en sokken van merino wol mee te nemen. Vanaf ongeveer 80% merino gaat het niet stinken, ook niet na dagen zweten. Een shirt van 100% merino kun je makkelijk drie dagen achter elkaar dragen zonder dat het echt gaat stinken. Voor sokken geldt hetzelfde: merino maakt echt een groot verschil.",
+      "tipLabel": "Twee outfits",
+      "tipText": "Het doel is om met één wandeloutfit en één droge outfit voor in de hut te reizen. Die droge outfit kan ook meteen je pyjama zijn."
+    },
+    {
+      "_template": "text",
+      "title": "Veiligheid & gezondheid",
+      "showInMenu": false,
+      "body": "Wij nemen een redelijk uitgebreide EHBO-kit mee. Neem zelf **pijnstillers** en **blaarpleisters** mee.\n\nZweet je veel? Dan kun je ook **zoutpillen** nemen om je elektrolyten aan te vullen.\n\nHoe hoger je komt, hoe minder beestjes er zijn. Toch is het een goed idee om wat **deet** (of iets vergelijkbaars) mee te nemen tegen muggen, teken en paardenvliegen.",
+      "tipLabel": "Reisverzekering met bergdekking",
+      "tipText": "Check of je reisverzekering bergsporten dekt zodat een eventuele reddingsactie (search & rescue) in de bergen gedekt is."
+    },
+    {
+      "_template": "packing",
+      "title": "Paklijst",
+      "showInMenu": true,
+      "menuLabel": "Paklijst",
+      "counterWord": "gepakt",
+      "resetLabel": "Paklijst resetten",
+      "groups": [
+        {
+          "name": "Kleding",
+          "items": [
+            { "label": "2 korte broeken, of 1 lange + 1 korte" },
+            { "label": "Wandelshirt lange mouw (merino aan te raden)" },
+            { "label": "T-shirt voor in de hut" },
+            { "label": "4 paar sokken (bij voorkeur merino)" },
+            { "label": "4 onderbroeken" },
+            { "label": "Fleece of trui" },
+            { "label": "Droge trui voor in de hut" },
+            { "label": "Regenjas (ademend)" },
+            { "label": "Wandelhoed of zonnepet" },
+            { "label": "Muts" },
+            { "label": "Buff" },
+            { "label": "Handschoenen", "note": "optioneel, bij snel koud" }
+          ]
+        },
+        {
+          "name": "Aan je voeten",
+          "items": [
+            { "label": "Wandelschoenen" },
+            { "label": "Slippers voor in de hut", "note": "je kan ook slippers lenen bij de hutten — grote maten zijn vaak wat lastiger" }
+          ]
+        },
+        {
+          "name": "Slapen",
+          "items": [
+            { "label": "Lakenzak" },
+            { "label": "Kussensloop of eigen kussentje" },
+            { "label": "Oordopjes" }
+          ]
+        },
+        {
+          "name": "Verzorging & EHBO",
+          "items": [
+            { "label": "Sneldrogende handdoek" },
+            { "label": "Minimale toilettas" },
+            { "label": "(Nat) wc-papier of zakdoekjes" },
+            { "label": "Zonnebrand" },
+            { "label": "Insectenspray (deet)" },
+            { "label": "2x kleine vuilniszakjes (eigen afval)" },
+            { "label": "Pijnstillers" },
+            { "label": "Blaarpleisters" },
+            { "label": "Zoutpillen", "note": "optioneel, bij veel zweten" }
+          ]
+        },
+        {
+          "name": "Uitrusting",
+          "items": [
+            { "label": "Rugzak", "note": "Stijntje neemt 25 l mee, Sjoerd 40 l — kies naar eigen voorkeur" },
+            { "label": "Grote vuilniszak", "note": "als waterdichte binnenzak in je rugzak" },
+            { "label": "Grote waterfles" },
+            { "label": "Wandelstokken" }
+          ]
+        },
+        {
+          "name": "Eten & drinken onderweg",
+          "items": [
+            { "label": "Shakebeker" },
+            { "label": "Eiwitpoeder + gedroogde havermoutpap" },
+            { "label": "Droge worst" },
+            { "label": "Snickers / repen" },
+            { "label": "Zakje zoute nootjes" },
+            { "label": "Mueslibars" },
+            { "label": "Heel brood" }
+          ]
+        },
+        {
+          "name": "Elektronica",
+          "items": [
+            { "label": "Telefoon" },
+            { "label": "Powerbank" },
+            { "label": "Oplader/kabel" }
+          ]
+        }
+      ]
+    }
+  ],
+  "footerText": "Fijne tocht! ⛰️ · Pyreneeën, 13–16 september 2026"
+}

@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Nav from '../components/Nav.astro';
+import TextBlock from '../components/blocks/TextBlock.astro';
+import RouteBlock from '../components/blocks/RouteBlock.astro';
+import HutsBlock from '../components/blocks/HutsBlock.astro';
+import PackingBlock from '../components/blocks/PackingBlock.astro';
+import { withAnchors } from '../lib/slug';
+import page from '../../content/page.json';
+
+const blocks = withAnchors((page.blocks as any[]) || []);
+const menu = blocks
+  .filter((b: any) => b.showInMenu)
+  .map((b: any) => ({ label: b.menuLabel || b.title, href: '#' + b._anchor }));
+---
+<Base hero={page.hero} footerText={page.footerText}>
+  <Hero hero={page.hero} />
+  <Nav items={menu} />
+  <main class="wrap">
+    {blocks.map((b: any) => {
+      if (b._template === 'route') return <RouteBlock block={b} />;
+      if (b._template === 'huts') return <HutsBlock block={b} />;
+      if (b._template === 'packing') return <PackingBlock block={b} />;
+      return <TextBlock block={b} />;
+    })}
+  </main>
+</Base>

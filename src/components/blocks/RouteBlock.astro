@@ -1,0 +1,28 @@
+---
+const { block } = Astro.props;
+const stats = block?.stats ?? [];
+const etappes = block?.etappes ?? [];
+---
+<section class="card" id={block._anchor}>
+  {block.title && <h2>{block.title}</h2>}
+  {block.intro && <p>{block.intro}</p>}
+  {stats.length ? (
+    <div class="route-stats">
+      {stats.map((s: { value: string; label: string }) => (
+        <div class="stat"><span class="val">{s.value}</span><span class="lab">{s.label}</span></div>
+      ))}
+    </div>
+  ) : null}
+  {etappes.length ? (
+    <div class="etappes">
+      {etappes.map((e: { day: string; meta: string }) => (
+        <div class="etappe"><span class="day">{e.day}</span><span class="meta">{e.meta}</span></div>
+      ))}
+    </div>
+  ) : null}
+  {block.alltrailsUrl && (
+    <a class="route-link" style="margin-top:1.4rem" href={block.alltrailsUrl} target="_blank" rel="noopener">
+      {block.alltrailsLabel || 'Open op AllTrails →'}
+    </a>
+  )}
+</section>
