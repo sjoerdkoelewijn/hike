@@ -1,5 +1,10 @@
 import { defineConfig } from 'tinacms';
 
+// Moet gelijk lopen met `base` in astro.config.mjs: '/hike' in productie, '/' lokaal.
+// Tina wil hier alleen het segment zonder slashes ('hike' of leeg), anders zoekt
+// het admin-paneel z'n assets op /admin/... in plaats van /hike/admin/...
+const basePath = (process.env.BASE_PATH ?? '/hike').replace(/^\/+|\/+$/g, '');
+
 const menuFields: any[] = [
   { type: 'boolean', name: 'showInMenu', label: 'Toon in menu' },
   { type: 'string', name: 'menuLabel', label: 'Menu-label (optioneel, standaard = de kop)' },
@@ -9,7 +14,7 @@ export default defineConfig({
   branch: process.env.TINA_BRANCH || process.env.HEAD || 'main',
   clientId: process.env.TINA_PUBLIC_CLIENT_ID || '',
   token: process.env.TINA_TOKEN || '',
-  build: { outputFolder: 'admin', publicFolder: 'public' },
+  build: { outputFolder: 'admin', publicFolder: 'public', basePath },
   media: { tina: { mediaRoot: 'images', publicFolder: 'public' } },
   schema: {
     collections: [
