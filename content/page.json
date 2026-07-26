@@ -95,13 +95,6 @@
       "_template": "huts"
     },
     {
-      "title": "Dagritme",
-      "showInMenu": true,
-      "menuLabel": "In de hut",
-      "body": "We moeten uiterlijk om **18:00** bij de hut zijn, anders slaan ze alarm en gaan ze je zoeken. Het is slim om **voor 16:00** aan te komen. Onweer in de bergen begint meestal pas na die tijd, dus hoe eerder we binnen zijn, hoe kleiner de kans dat we in een bui lopen. We moeten dus redelijk op tijd weg bij elke hut om niet te laat bij de volgende aan te komen.\n\n- 15:30 — Streefaankomst bij de hut\n- 18:00 — Uiterste aankomsttijd\n- 19:00 — Avondeten",
-      "_template": "text"
-    },
-    {
       "title": "Kleding & het weer",
       "showInMenu": true,
       "menuLabel": "Kleding",
@@ -122,6 +115,13 @@
       "body": "Ik kan je aanraden om shirts en sokken van merino wol mee te nemen. Vanaf ongeveer 80% merino gaat het niet stinken, ook niet na dagen zweten. Een shirt van 100% merino kun je makkelijk drie dagen achter elkaar dragen zonder dat het echt gaat stinken. Voor sokken geldt hetzelfde: merino maakt echt een groot verschil.",
       "tipLabel": "Twee outfits",
       "tipText": "Het doel is om met één wandeloutfit en één droge outfit voor in de hut te reizen. Die droge outfit kan ook meteen je pyjama zijn.",
+      "_template": "text"
+    },
+    {
+      "title": "Dagritme",
+      "showInMenu": true,
+      "menuLabel": "In de hut",
+      "body": "We moeten uiterlijk om **18:00** bij de hut zijn, anders slaan ze alarm en gaan ze je zoeken. Het is slim om **voor 16:00** aan te komen. Onweer in de bergen begint meestal pas na die tijd, dus hoe eerder we binnen zijn, hoe kleiner de kans dat we in een bui lopen. We moeten dus redelijk op tijd weg bij elke hut om niet te laat bij de volgende aan te komen.\n\n- 15:30 — Streefaankomst bij de hut\n- 18:00 — Uiterste aankomsttijd\n- 19:00 — Avondeten",
       "_template": "text"
     },
     {
