@@ -3,10 +3,12 @@ const { items = [] } = Astro.props;
 ---
 {items.length ? (
   <nav class="topnav">
-    <div class="topnav-inner">
-      {items.map((it: { label: string; href: string }) => (
-        <a class="navbtn" href={it.href} data-spy={it.href.replace('#', '')}>{it.label}</a>
-      ))}
+    <div class="topnav-scroll">
+      <div class="topnav-inner">
+        {items.map((it: { label: string; href: string }) => (
+          <a class="navbtn" href={it.href} data-spy={it.href.replace('#', '')}>{it.label}</a>
+        ))}
+      </div>
     </div>
   </nav>
 ) : null}
