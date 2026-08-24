@@ -20,7 +20,8 @@ achter elkaar en sla daarna één keer op.
 - **Hero** — kicker, titel, ondertitel, achtergrondfoto en de chips.
 - **Blokken** — toevoegen, verslepen en verwijderen. Types:
   - *Tekstsectie* — kop, tekst, optionele knop, voetnoot en tipkader.
-  - *Route* — statistieken, etappes en de AllTrails-knop.
+  - *Route* — statistieken, etappes (elk met een eigen AllTrails-link) en de
+    AllTrails-knop voor de hele route.
   - *Hutten* — lijst met hutten (nacht, naam, info, link).
   - *Paklijst* — groepen met afvinkbare items.
 - **Menu** — elk blok heeft een schakelaar **Toon in menu**. Aan = er verschijnt
@@ -60,6 +61,34 @@ Lokaal draait het CMS in "local mode": opslaan schrijft direct naar
 De pagina leest `content/page.json` rechtstreeks in; er is geen server nodig.
 De paklijst onthoudt aangevinkte items per bezoeker in de browser
 (`localStorage`), niet op een server.
+
+## App op je telefoon & offline gebruik
+
+De site is een PWA: je kunt hem als app installeren en hij blijft werken zonder
+bereik — handig op de tocht zelf.
+
+**Installeren (Android/Chrome):** open de site, tik op de groene balk bovenaan
+(*Zet deze gids als app op je telefoon*) of gebruik het menu ⋮ →
+*App installeren*. Op iOS: *Delen* → *Zet op beginscherm*.
+
+**Offline:** bij het eerste bezoek slaat de service worker eerst de pagina, CSS
+en fonts op, en daarna de foto's. Doe dat één keer thuis op wifi; daarna werkt
+de site ook zonder verbinding, precies zoals online.
+
+**Bijwerken:** zodra er wél verbinding is, controleert de site of er een
+nieuwe versie is — bij het openen, bij het terugkeren naar de app en zodra je
+weer bereik krijgt. Is er iets veranderd, dan wordt de offline-kopie meteen
+ververst.
+
+| Bestand | Rol |
+|---------|-----|
+| `public/manifest.json` | Naam, kleuren en icoon van de app |
+| `public/icon.svg` | App-icoon |
+| `scripts/sw-template.js` | De service worker (**hier bewerken**) |
+| `astro.config.mjs` | Vult bij de build de lijst gehashte bestanden in en schrijft `dist/sw.js` |
+
+`dist/sw.js` wordt gegenereerd; wijzig altijd `scripts/sw-template.js`. Het
+`/admin`-paneel wordt bewust niet gecachet.
 
 ## Instellingen
 

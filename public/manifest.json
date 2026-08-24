@@ -1,0 +1,14 @@
+{
+  "name": "Pyreneeën Hutten Tocht",
+  "short_name": "Hutten Tocht",
+  "description": "Paklijst, route en praktische info voor de hutten tocht in het Néouvielle-massief.",
+  "lang": "nl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#E9E1D0",
+  "theme_color": "#2E8B57",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

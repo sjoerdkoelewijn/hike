@@ -9,6 +9,8 @@ import '../styles/global.css';
 const { hero, footerText } = Astro.props;
 const title = 'Pyreneeën Hutten Tocht — Paklijst & Info';
 const description = hero?.subtitle || 'Wat je meeneemt en wat je kan verwachten';
+// BASE_URL is '/hike' of '/' — hier altijd mét sluitende slash.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
 ---
 <!DOCTYPE html>
 <html lang="nl">
@@ -22,8 +24,18 @@ const description = hero?.subtitle || 'Wat je meeneemt en wat je kan verwachten'
     rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⛰️%3C/text%3E%3C/svg%3E"
   />
+
+  <!-- Installeerbaar als app (PWA) -->
+  <link rel="manifest" href={`${base}manifest.json`} />
+  <link rel="apple-touch-icon" href={`${base}icon.svg`} />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Hutten Tocht" />
 </head>
 <body>
+  <button id="installBanner" class="install-banner" type="button" hidden>
+    Zet deze gids als app op je telefoon
+  </button>
   <slot />
   <footer>{footerText || 'Fijne tocht! ⛰️'}</footer>
 
@@ -81,7 +93,69 @@ const description = hero?.subtitle || 'Wat je meeneemt en wat je kan verwachten'
         window.addEventListener('resize', onScroll);
         onScroll();
       }
+
+      // "Zet als app op je telefoon": alleen in de browser, niet in de app zelf.
+      var installBanner = document.getElementById('installBanner');
+      var deferredPrompt = null;
+      var isStandalone =
+        window.matchMedia('(display-mode: standalone)').matches ||
+        window.navigator.standalone === true;
+      if (installBanner && !isStandalone) installBanner.hidden = false;
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault(); deferredPrompt = e;
+      });
+      if (installBanner) installBanner.addEventListener('click', function () {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(function (choice) {
+            deferredPrompt = null;
+            if (choice.outcome === 'accepted') installBanner.hidden = true;
+          });
+        } else {
+          // iOS en oudere browsers kunnen niet zelf installeren: uitleg tonen.
+          installBanner.textContent = 'Tik op Delen → Zet op beginscherm';
+        }
+      });
+      window.addEventListener('appinstalled', function () {
+        if (installBanner) installBanner.hidden = true;
+      });
     })();
+  </script>
+
+  <script>
+    // Service worker: bewaart pagina, foto's en fonts zodat de gids ook zonder
+    // bereik werkt. sw.js wordt bij de build gegenereerd (zie astro.config.mjs).
+    if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+      const swBase = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
+
+      // Vraag de worker om een volledige offline-kopie (foto's, alle fonts).
+      const askFullCache = () => {
+        const sw = navigator.serviceWorker.controller;
+        if (sw && navigator.onLine) sw.postMessage({ type: 'cache-all' });
+      };
+      // Bij het eerste bezoek én na een nieuwe versie neemt een nieuwe worker
+      // het over; dan pas heeft het zin om de rest op te halen.
+      navigator.serviceWorker.addEventListener('controllerchange', askFullCache);
+
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register(swBase + 'sw.js', { scope: swBase })
+          .then((reg) => {
+            // Is er online een nieuwe versie gepubliceerd? Dan die ophalen; de
+            // nieuwe worker vernieuwt daarna vanzelf de offline-kopie.
+            const checkForUpdate = () => { if (navigator.onLine) reg.update().catch(() => {}); };
+            window.addEventListener('online', checkForUpdate);
+            // Ook bij terugkeren naar het tabblad/de app na een tijd weg.
+            document.addEventListener('visibilitychange', () => {
+              if (!document.hidden) checkForUpdate();
+            });
+            checkForUpdate();
+            return navigator.serviceWorker.ready;
+          })
+          .then(askFullCache)
+          .catch(() => {});
+      });
+    }
   </script>
 </body>
 </html>

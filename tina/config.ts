@@ -89,6 +89,7 @@ export default defineConfig({
                     fields: [
                       { type: 'string', name: 'day', label: 'Dag' },
                       { type: 'string', name: 'meta', label: 'Details (afstand, hoogte, tijd)' },
+                      { type: 'string', name: 'url', label: 'AllTrails-link van deze etappe (optioneel)' },
                     ],
                   },
                 ],

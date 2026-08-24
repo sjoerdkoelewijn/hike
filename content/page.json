@@ -39,19 +39,23 @@
       "etappes": [
         {
           "day": "Dag 1 — naar Refuge de l'Oule",
-          "meta": "6,7 km · ↗ 648 m · ↘ 446 m · 3,5 – 4,5 uur"
+          "meta": "6,7 km · ↗ 648 m · ↘ 446 m · 3,5 – 4,5 uur",
+          "url": "https://www.alltrails.com/explore/custom-routes/naar-refuge-l-oule-e247c79"
         },
         {
           "day": "Dag 2 — naar Refuge Campana de Cloutou",
-          "meta": "9,3 km · ↗ 744 m · ↘ 350 m · 5 – 6 uur"
+          "meta": "9,3 km · ↗ 744 m · ↘ 350 m · 5 – 6 uur",
+          "url": "https://www.alltrails.com/explore/custom-routes/refuge-campana-de-cloutou-9e9d50f"
         },
         {
           "day": "Dag 3 — naar Refuge d'Aygues-Cluses",
-          "meta": "7,1 km · ↗ 447 m · ↘ 519 m · 4 – 5,5 uur"
+          "meta": "7,1 km · ↗ 447 m · ↘ 519 m · 4 – 5,5 uur",
+          "url": "https://www.alltrails.com/explore/custom-routes/refuge-aygues-cluses-e9fbbb8"
         },
         {
           "day": "Dag 4 — terug naar de parking",
-          "meta": "8,9 km · ↗ 396 m · ↘ 677 m · 4 – 4,5 uur"
+          "meta": "8,9 km · ↗ 396 m · ↘ 677 m · 4 – 4,5 uur",
+          "url": "https://www.alltrails.com/explore/custom-routes/parking-lac-d-oredon-8213b1c"
         }
       ],
       "_template": "route"
@@ -98,7 +102,10 @@
       "title": "Kleding & het weer",
       "showInMenu": true,
       "menuLabel": "Kleding",
-      "body": "We gaan van 13 tot 16 september. Overdag is het dan (meestal) nog lekker weer en kan het best heet worden in de zon, maar 's avonds en in de ochtend kan het flink afkoelen op hoogte.\n\nDe zon is hier in het zuiden erg sterk, dus zorg dat je UV werende kleding meeneemt om in te lopen, die niet te warm is. Wij lopen in een dun merino wol shirt met lange mouwen, dat beschermd tegen de zon en houd je zowel koel als warm (ook als je nat van het zweet bent.) Katoen zou ik sowieso niet dragen, dat droogt langzaam en beschermd niet tegen kou als het nat wordt.\n\nHoud ook rekening met regen: in de bergen kan een bui echt flink tekeergaan. Om die reden heb ik ook een grote vuilniszak als extra liner in mijn rugzak, dan weet je zeker dat alles goed droog blijft.",
+      "body": "We gaan van 13 tot 16 september. Overdag is het dan (meestal) nog lekker weer en kan het best heet worden in de zon, maar 's avonds en in de ochtend kan het flink afkoelen op hoogte.\n\nDe zon is hier in het zuiden erg sterk, dus zorg dat je UV werende kleding meeneemt om in te lopen, die niet te warm is. Wij lopen in een dun merino wol shirt met lange mouwen, dat beschermd tegen de zon en houd je zowel koel als warm (ook als je nat van het zweet bent.) Katoen zou ik sowieso niet dragen, dat droogt langzaam en beschermd niet tegen kou als het nat wordt.\n\nHoud ook rekening met regen: in de bergen kan een bui echt flink tekeergaan. Om die reden heb ik ook een grote vuilniszak als extra liner in mijn rugzak, dan weet je zeker dat alles goed droog blijft.\n\nTrek liever een paar dunne laagjes over elkaar aan dan één dikke trui. Zo kun je onderweg makkelijk bijsturen: een laagje uit zodra je warm wordt bij het klimmen, en er weer een aan zodra je stilstaat op een pas of de zon achter een wolk verdwijnt. Je houdt jezelf daarmee veel constanter op temperatuur — en je voorkomt dat je doorweekt van het zweet in de kou komt te staan.",
+      "buttonLabel": "Video: hoe je laagjes slim combineert →",
+      "buttonUrl": "https://www.youtube.com/watch?v=5l3luRDSvE0",
+      "buttonGhost": true,
       "tipLabel": "Bescherm jezelf tegen de zon",
       "tipText": "Draag zoveel mogelijk een shirt met lange mouwen, een buff om je nek en een hoed met brede rand of (zonne)pet. Dan heb je ook minder zonnebrand nodig.",
       "_template": "text"

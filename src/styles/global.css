@@ -25,6 +25,15 @@ body{
   -webkit-text-size-adjust:100%;
 }
 
+/* ---------- PWA: install-knop ---------- */
+.install-banner{
+  display:block;width:100%;border:none;cursor:pointer;
+  background:var(--green);color:#fff;
+  font-family:inherit;font-size:.875rem;font-weight:700;
+  padding:.6rem 16px;text-align:center;
+}
+.install-banner:hover{background:var(--green-dark)}
+
 /* ---------- HERO ---------- */
 .hero{
   position:relative;color:#fff;text-align:center;padding:0 20px;
@@ -108,6 +117,10 @@ a:hover{color:var(--green)}
 .etappe{padding:.9rem 0;border-top:1px solid var(--border)}
 .etappe:first-child{border-top:none}
 .etappe .day{font-weight:700;color:var(--ink);display:block}
+/* Etappe-kop als link naar de AllTrails-route van die dag */
+.etappe a.day-link{color:var(--green-dark);text-decoration:none;display:inline-block}
+.etappe a.day-link::after{content:" ↗";font-weight:700}
+.etappe a.day-link:hover,.etappe a.day-link:focus-visible{text-decoration:underline}
 .etappe .meta{font-size:.94rem;color:var(--muted)}
 
 /* ---------- HUTTEN ---------- */

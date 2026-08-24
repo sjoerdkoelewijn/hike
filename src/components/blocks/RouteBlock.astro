@@ -15,8 +15,15 @@ const etappes = block?.etappes ?? [];
   ) : null}
   {etappes.length ? (
     <div class="etappes">
-      {etappes.map((e: { day: string; meta: string }) => (
-        <div class="etappe"><span class="day">{e.day}</span><span class="meta">{e.meta}</span></div>
+      {etappes.map((e: { day: string; meta: string; url?: string }) => (
+        <div class="etappe">
+          {e.url ? (
+            <a class="day day-link" href={e.url} target="_blank" rel="noopener">{e.day}</a>
+          ) : (
+            <span class="day">{e.day}</span>
+          )}
+          <span class="meta">{e.meta}</span>
+        </div>
       ))}
     </div>
   ) : null}

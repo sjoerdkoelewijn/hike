@@ -1,0 +1,7 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bergen">
+  <rect width="512" height="512" rx="96" fill="#2E8B57"/>
+  <circle cx="352" cy="146" r="36" fill="#F0C58A"/>
+  <path d="M96 384 L205 168 L268 292 L306 216 L416 384 Z" fill="#F7F1E3"/>
+  <path d="M205 168 L176 226 L196 216 L214 236 L234 220 L205 168 Z" fill="#FFFFFF"/>
+  <path d="M306 216 L288 252 L302 246 L314 258 L326 248 L306 216 Z" fill="#FFFFFF"/>
+</svg>
