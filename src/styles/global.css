@@ -41,6 +41,10 @@ body{
   display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;
 }
 .hero::before{content:"";position:absolute;inset:0;background:var(--hero-image) center/cover no-repeat;z-index:0}
+@media(min-width:700px){
+  /* Op breed scherm de bredere uitsnede, als die is ingesteld */
+  .hero::before{background-image:var(--hero-image-wide,var(--hero-image))}
+}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,42,32,.45) 0%,rgba(28,42,32,.55) 60%,rgba(28,42,32,.82) 100%);z-index:1}
 .hero > *{position:relative;z-index:2}
 .kicker{color:#F0C58A;text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:700;margin-bottom:.7rem}

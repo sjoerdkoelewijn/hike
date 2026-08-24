@@ -17,7 +17,10 @@ achter elkaar en sla daarna één keer op.
 
 ## Wat kun je zelf aanpassen?
 
-- **Hero** — kicker, titel, ondertitel, achtergrondfoto en de chips.
+- **Hero** — kicker, titel, ondertitel, achtergrondfoto en de chips. Er is een
+  tweede fotoveld voor breed scherm: een vierkante of staande foto wordt op
+  desktop grotendeels weggesneden, dus zet daar een bredere versie neer.
+  Leeg laten = overal dezelfde foto.
 - **Blokken** — toevoegen, verslepen en verwijderen. Types:
   - *Tekstsectie* — kop, tekst, optionele knop, voetnoot en tipkader.
   - *Route* — statistieken, etappes (elk met een eigen AllTrails-link) en de

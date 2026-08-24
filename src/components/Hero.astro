@@ -1,9 +1,17 @@
 ---
 const { hero } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const img = hero?.image ? `${base}/${String(hero.image).replace(/^\//, '')}` : '';
+const url = (p: unknown) => (p ? `${base}/${String(p).replace(/^\//, '')}` : '');
+const img = url(hero?.image);
+// Optioneel: een bredere uitsnede voor desktop. Een staande of vierkante foto
+// wordt op een breed scherm namelijk grotendeels weggesneden door `cover`.
+const imgWide = url(hero?.imageWide);
+const style = [
+  `--hero-image: url('${img}')`,
+  imgWide && `--hero-image-wide: url('${imgWide}')`,
+].filter(Boolean).join('; ');
 ---
-<header class="hero" style={`--hero-image: url('${img}')`}>
+<header class="hero" style={style}>
   {hero?.kicker && <p class="kicker">{hero.kicker}</p>}
   <h1>{hero?.title}</h1>
   {hero?.subtitle && <p class="subtitle">{hero.subtitle}</p>}

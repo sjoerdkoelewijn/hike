@@ -35,6 +35,11 @@ export default defineConfig({
               { type: 'string', name: 'title', label: 'Titel' },
               { type: 'string', name: 'subtitle', label: 'Ondertitel' },
               { type: 'image', name: 'image', label: 'Achtergrondfoto' },
+              {
+                type: 'image', name: 'imageWide',
+                label: 'Achtergrondfoto voor breed scherm (optioneel)',
+                description: 'Een vierkante of staande foto wordt op desktop grotendeels weggesneden. Zet hier een bredere versie; leeg laten = overal dezelfde foto.',
+              },
               { type: 'string', name: 'chips', label: 'Chips (labels)', list: true },
             ],
           },
