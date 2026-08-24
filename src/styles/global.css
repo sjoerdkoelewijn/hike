@@ -121,7 +121,7 @@ a:hover{color:var(--green)}
 .etappe a.day-link{color:var(--green-dark);text-decoration:none;display:inline-block}
 .etappe a.day-link::after{content:" ↗";font-weight:700}
 .etappe a.day-link:hover,.etappe a.day-link:focus-visible{text-decoration:underline}
-.etappe .meta{font-size:.94rem;color:var(--muted)}
+.etappe .meta{display:block;font-size:.94rem;color:var(--muted)}
 
 /* ---------- HUTTEN ---------- */
 .hut{padding:1rem 0;border-top:1px solid var(--border)}
