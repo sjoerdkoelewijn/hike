@@ -32,6 +32,11 @@ body{
   font-family:inherit;font-size:.875rem;font-weight:700;
   padding:.6rem 16px;text-align:center;
 }
+/* Zonder deze regel wint `display:block` hierboven van de browserregel voor
+   [hidden], en staat de balk er alsnog. */
+.install-banner[hidden]{display:none}
+/* Installeren is iets voor je telefoon; op een breed scherm heeft het geen nut. */
+@media(min-width:700px){ .install-banner{display:none} }
 .install-banner:hover{background:var(--green-dark)}
 
 /* ---------- HERO ---------- */
@@ -123,8 +128,10 @@ a:hover{color:var(--green)}
 .etappe .day{font-weight:700;color:var(--ink);display:block}
 /* Etappe-kop als link naar de AllTrails-route van die dag */
 .etappe a.day-link{color:var(--green-dark);text-decoration:none;display:inline-block}
-.etappe a.day-link::after{content:" ↗";font-weight:700}
 .etappe a.day-link:hover,.etappe a.day-link:focus-visible{text-decoration:underline}
+/* Eigen icoon voor "opent extern", zodat het niet lijkt op de ↗ van de
+   stijging in de regel eronder. */
+.ext-icon{width:.78em;height:.78em;margin-left:.35em;vertical-align:baseline}
 .etappe .meta{display:block;font-size:.94rem;color:var(--muted)}
 
 /* ---------- HUTTEN ---------- */
