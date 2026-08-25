@@ -94,29 +94,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
         onScroll();
       }
 
-      // "Zet als app op je telefoon": alleen in de browser, niet in de app zelf.
+      // "Zet als app op je telefoon". De balk blijft verborgen tot de browser
+      // zelf zegt dat installeren kan: die gebeurtenis blijft uit zodra de app
+      // al geïnstalleerd is, in de app zelf, en op browsers die het niet
+      // kunnen (Safari op iPhone). Zo staat er nooit een knop die niets doet.
       var installBanner = document.getElementById('installBanner');
       var deferredPrompt = null;
-      var isStandalone =
-        window.matchMedia('(display-mode: standalone)').matches ||
-        window.navigator.standalone === true;
-      if (installBanner && !isStandalone) installBanner.hidden = false;
       window.addEventListener('beforeinstallprompt', function (e) {
-        e.preventDefault(); deferredPrompt = e;
+        e.preventDefault();
+        deferredPrompt = e;
+        if (installBanner) installBanner.hidden = false;
       });
       if (installBanner) installBanner.addEventListener('click', function () {
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then(function (choice) {
-            deferredPrompt = null;
-            if (choice.outcome === 'accepted') installBanner.hidden = true;
-          });
-        } else {
-          // iOS en oudere browsers kunnen niet zelf installeren: uitleg tonen.
-          installBanner.textContent = 'Tik op Delen → Zet op beginscherm';
-        }
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function () {
+          deferredPrompt = null;
+          installBanner.hidden = true;
+        });
       });
       window.addEventListener('appinstalled', function () {
+        deferredPrompt = null;
         if (installBanner) installBanner.hidden = true;
       });
     })();

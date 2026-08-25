@@ -72,7 +72,11 @@ bereik — handig op de tocht zelf.
 
 **Installeren (Android/Chrome):** open de site, tik op de groene balk bovenaan
 (*Zet deze gids als app op je telefoon*) of gebruik het menu ⋮ →
-*App installeren*. Op iOS: *Delen* → *Zet op beginscherm*.
+*App installeren*. Die balk verschijnt alleen als de browser installeren
+daadwerkelijk aanbiedt — dus niet meer zodra de app geïnstalleerd is, en niet
+op Safari (iPhone), dat geen installatievenster kent. Daar gaat het via
+*Delen* → *Zet op beginscherm*; de site werkt dan verder hetzelfde, offline
+inbegrepen.
 
 **Offline:** bij het eerste bezoek slaat de service worker eerst de pagina, CSS
 en fonts op, en daarna de foto's. Doe dat één keer thuis op wifi; daarna werkt
