@@ -116,7 +116,9 @@ a:hover{color:var(--green)}
 .stat .lab{display:block;font-size:.8125rem;color:var(--muted);margin-top:.15rem}
 
 /* ---------- BUTTON LINK ---------- */
-.route-link{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;padding:.7rem 1.4rem;border-radius:999px;transition:background .15s}
+/* De rand staat ook op de gevulde knop (transparant), anders is de ghost-variant
+   4px hoger en breder dan de gevulde. */
+.route-link{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;padding:.7rem 1.4rem;border:2px solid transparent;border-radius:999px;transition:background .15s}
 .route-link:hover{background:var(--green-dark);color:#fff}
 .route-link.ghost{background:transparent;color:var(--green);border:2px solid var(--green)}
 .route-link.ghost:hover{background:var(--green);color:#fff}
