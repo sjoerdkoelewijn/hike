@@ -202,7 +202,8 @@
               "label": "Droge trui voor in de hut"
             },
             {
-              "label": "Regenjas (water- & windstopper)"
+              "label": "Regenjas (ademend)",
+              "note": "Is ook meteen een windstopper"
             },
             {
               "label": "Wandelhoed of zonnepet"
