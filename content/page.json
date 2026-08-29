@@ -354,6 +354,14 @@
               "label": "Oplader/kabel"
             }
           ]
+        },
+        {
+          "name": "Documenten",
+          "items": [
+            {
+              "label": "ID kaart of paspoort "
+            }
+          ]
         }
       ],
       "_template": "packing"
