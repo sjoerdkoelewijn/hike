@@ -356,13 +356,17 @@
           ]
         },
         {
-          "name": "Documenten",
+          "name": "Documenten & geld",
           "items": [
             {
               "label": "ID kaart of paspoort "
             },
             {
               "label": "EU verzekeringspas"
+            },
+            {
+              "label": "€ 200 a €250 contant geld",
+              "note": "Eten & hut is bij elkaar €155, de rest voor drankjes & de zekerheid"
             }
           ]
         }
