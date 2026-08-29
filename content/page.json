@@ -183,7 +183,8 @@
           "name": "Kleding",
           "items": [
             {
-              "label": "2 korte broeken, of 1 lange + 1 korte"
+              "label": "2 korte broeken",
+              "note": "of 1 lange & 1 korte als je het sneller koud hebt"
             },
             {
               "label": "Wandelshirt lange mouw (merino aan te raden)"
