@@ -173,6 +173,36 @@
       "_template": "text"
     },
     {
+      "title": "Gear",
+      "showInMenu": true,
+      "menuLabel": "Gear",
+      "intro": "Dit is wat ik zelf draag en gebruik tijdens het wandelen. Ben je nog op zoek naar de juiste spullen? Dan is dit misschien een goed startpunt.",
+      "items": [
+        {
+          "name": "Altra Lone Peak 9+",
+          "note": "Wide toebox - Zero drop - Rockplate - Vibram zool (let op: de +)",
+          "url": "https://eu.altrarunning.com/nl-nl/products/lone-peak-9-voor-heren-al0a85rg88c"
+        },
+        {
+          "name": "Merino.tech 100% Men's Merino Hooded Sweater",
+          "url": "https://www.amazon.fr/dp/B0CL9Q8RVW"
+        },
+        {
+          "name": "Bassdash Sun Hat Wide Brim with Large Neck Protection",
+          "url": "https://www.amazon.fr/dp/B09Y1SJ5MP"
+        },
+        {
+          "name": "Decathlon Simond Backpack 70 l - MT100 Easyfit",
+          "url": "https://www.decathlon.nl/p/trekkingrugzak-mt100-voor-heren-70-liter/309851/c184m8559696"
+        },
+        {
+          "name": "Decathlon Domyos Fitness-short",
+          "url": "https://www.decathlon.nl/p/fitness-short-voor-heren-zwart/305836/c382c344m8547823"
+        }
+      ],
+      "_template": "gear"
+    },
+    {
       "title": "Paklijst",
       "showInMenu": true,
       "menuLabel": "Paklijst",

@@ -1,0 +1,42 @@
+---
+const { block } = Astro.props;
+const items = block?.items ?? [];
+
+// Zonder eigen link-tekst tonen we het domein, zodat je ziet waar je heen gaat.
+function linkLabel(url: string, label?: string): string {
+  if (label) return label;
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return 'Bekijken';
+  }
+}
+---
+<section class="card" id={block._anchor}>
+  {block.title && <h2>{block.title}</h2>}
+  {block.intro && <p>{block.intro}</p>}
+  {items.length ? (
+    <div class="gear">
+      {items.map((it: { name?: string; note?: string; url?: string; urlLabel?: string }) => (
+        <div class="gear-item">
+          {it.name && <div class="gear-name">{it.name}</div>}
+          {it.note && <p class="gear-note">{it.note}</p>}
+          {it.url && (
+            <a class="gear-link" href={it.url} target="_blank" rel="noopener">
+              {linkLabel(it.url, it.urlLabel)}
+              <svg
+                class="ext-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true" focusable="false"
+              >
+                <path d="M9.5 2.5h4v4" />
+                <path d="M13.5 2.5 7.5 8.5" />
+                <path d="M12 9.5v2.75a1.25 1.25 0 0 1-1.25 1.25h-7A1.25 1.25 0 0 1 2.5 12.25v-7A1.25 1.25 0 0 1 3.75 4H6.5" />
+              </svg>
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  ) : null}
+</section>

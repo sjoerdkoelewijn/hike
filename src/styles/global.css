@@ -143,6 +143,14 @@ a:hover{color:var(--green)}
 .hut .naam{font-weight:700;color:var(--ink);font-size:1.05rem;margin:.1rem 0 .3rem}
 .hut a.hut-link{font-size:.9rem;font-weight:600}
 
+/* ---------- GEAR ---------- */
+.gear{margin-top:1.2rem}
+.gear-item{padding:.9rem 0;border-top:1px solid var(--border)}
+.gear-item:first-child{border-top:none}
+.gear-name{font-weight:700;color:var(--ink);font-size:1.05rem}
+.gear-note{margin:.2rem 0 0;font-size:.94rem;color:var(--muted)}
+.gear a.gear-link{display:inline-block;margin-top:.35rem;font-size:.9rem;font-weight:600}
+
 /* ---------- PAKLIJST ---------- */
 .packing-head{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;justify-content:space-between;margin-bottom:1.1rem}
 .packing-head h2{margin:0}

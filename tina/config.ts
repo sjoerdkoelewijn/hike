@@ -120,6 +120,26 @@ export default defineConfig({
                 ],
               },
               {
+                name: 'gear',
+                label: 'Gear',
+                ui: { itemProps: (i: any) => ({ label: i?.title ? `${i.title} (gear)` : 'Gear' }) },
+                fields: [
+                  { type: 'string', name: 'title', label: 'Kop' },
+                  ...menuFields,
+                  { type: 'string', name: 'intro', label: 'Intro', ui: { component: 'textarea' } },
+                  {
+                    type: 'object', name: 'items', label: 'Items', list: true,
+                    ui: { itemProps: (i: any) => ({ label: i?.name }) },
+                    fields: [
+                      { type: 'string', name: 'name', label: 'Naam' },
+                      { type: 'string', name: 'note', label: 'Korte omschrijving (optioneel)' },
+                      { type: 'string', name: 'url', label: 'Link (URL)' },
+                      { type: 'string', name: 'urlLabel', label: 'Link-tekst (leeg = het domein)' },
+                    ],
+                  },
+                ],
+              },
+              {
                 name: 'packing',
                 label: 'Paklijst',
                 ui: { itemProps: (i: any) => ({ label: i?.title ? `${i.title} (paklijst)` : 'Paklijst' }) },
