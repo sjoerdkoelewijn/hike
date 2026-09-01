@@ -133,8 +133,7 @@ export default defineConfig({
                     fields: [
                       { type: 'string', name: 'name', label: 'Naam' },
                       { type: 'string', name: 'note', label: 'Korte omschrijving (optioneel)' },
-                      { type: 'string', name: 'url', label: 'Link (URL)' },
-                      { type: 'string', name: 'urlLabel', label: 'Link-tekst (leeg = het domein)' },
+                      { type: 'string', name: 'url', label: 'Link (URL) — de naam wordt de link' },
                     ],
                   },
                 ],
